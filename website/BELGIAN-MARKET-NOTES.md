@@ -109,13 +109,44 @@ client's real process and CV details.
     disability-focused practice and because Belgian/EU accessibility rules
     increasingly apply to service-sector sites.
 
-## Open questions for the client
+## Confirmed by the client (applied to the site)
 
-- Real name, credentials, years of experience, and professional
-  registration number for the About page.
-- Practice address/region, phone number, and whether sessions are in
-  person, at home, or online.
-- KBO/BTW (VAT) enterprise number once registered.
+- Founder's name: **Patience Afram** — now on the About page (NL + EN).
+- Qualification: **Opvoedster** (childcare educator). Applied to the About
+  page credentials list. **Flag:** the rest of the site's copy still says
+  "orthopedagogische begeleiding / orthopedagogical support" throughout,
+  which in Belgium usually implies an orthopedagogiek degree — a different,
+  specific qualification from "opvoedster." Worth confirming with the client
+  whether that positioning/terminology is intentional (e.g. she works under
+  supervision of, or in the tradition of, orthopedagogical methods) or
+  whether the site's language should shift to match "opvoedster" more
+  literally, before this goes live.
+- Region: **Antwerpen · Gent · Brussel** — updated in the footer and
+  Contact page on every NL/EN page.
+- Phone: **0489 05 65 42** — added to the Contact page (`tel:` link) on
+  both languages.
+- KBO/enterprise number: **1022.865.295** — added to every footer.
+- Services offered: in person, home visits, and online, confirmed —
+  Contact page now states sessions typically run 1–2 hours/day, with
+  holiday-period care up to 4 hours/day.
+- French: confirmed to follow later, not needed at launch.
+- Gmail-based bookings: confirmed as the intended flow (as used on a
+  previous project). **Still needed:** which Gmail address to route
+  enquiries to, and whether it should go through a lightweight static
+  form-forwarder (no backend required) or a mailto: link. The contact
+  form is not wired up to any address yet.
+- Real photography: 5 photos of children playing with building blocks
+  received and placed — hero image and a 4-photo strip on the homepage
+  (NL + EN).
+
+## Still open
+
+- Diploma year, total years of experience, and any professional
+  registration/membership number for the About page.
+- The "opvoedster" vs. "orthopedagogisch" terminology question above.
+- Which Gmail address the contact form should send to.
+- Typical response time for enquiries (session-length info was given,
+  but not reply turnaround).
 - Confirm which mutualiteiten (if any) offer reimbursement.
-- Final logo file and real photography.
-- Whether French is needed at launch or can follow later.
+- Final logo file (a placeholder cedar icon is in use).
+- Sign-off on the draft 5-step approach and bio copy, or requested edits.
