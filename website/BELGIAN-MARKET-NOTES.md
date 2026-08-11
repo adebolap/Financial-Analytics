@@ -1,0 +1,113 @@
+# CederStem website — Belgian market notes
+
+This doc explains what was built, the assumptions made, and what's still needed
+from the client before this goes live.
+
+## What's in this build
+
+A static, no-build-tool website (plain HTML/CSS/JS — easy for a non-developer
+to edit or hand to any hosting provider) matching the brief in `Ceder_2.pdf`:
+
+- **Dutch site (root):** `index.html`, `over-mij.html`, `aanpak.html`,
+  `voor-wie.html`, `contact.html`, `privacybeleid.html`
+- **English mirror:** `en/index.html`, `en/about.html`, `en/approach.html`,
+  `en/for-whom.html`, `en/contact.html`, `en/privacy-policy.html`
+- Shared design system in `assets/css/style.css` (cream / soft green / beige,
+  serif headings, generous white space, cedar-tree mark)
+- `assets/img/logo-cedar.svg` — a placeholder cedar-tree logo mark. Swap for
+  the client's real logo once finalized.
+- Cookie consent banner, demo contact form, `robots.txt`, `sitemap.xml`,
+  `LocalBusiness` structured data, hreflang tags for NL/EN.
+
+**Reference site (nathalienimako.com):** the network policy for this session
+blocked outbound access to that domain, so I could not literally inspect its
+layout. I designed to the brief's own description instead (calm, warm,
+natural; cream/soft green/beige; lots of white space; simple typography) —
+a well-established look for personal/coaching practice sites, which is
+likely what that reference was showing. Worth a manual side-by-side check
+against the real site before calling this "matched."
+
+**Assumption to verify:** copy on the About page uses the working name
+"Nathalie," inferred from the reference URL (nathalienimako.com). Confirm the
+actual practitioner's name and replace if wrong.
+
+**No real photography or logo file exists yet** (per the brief — client will
+send images). Hero sections currently use color/illustration instead of
+photos so the site still looks intentional; swap in real photos of children
+learning/playing in a natural setting when available.
+
+The "5-step method" and specific bio/credential details are drafted as
+plausible placeholder copy, clearly marked in the HTML — replace with the
+client's real process and CV details.
+
+## Added specifically for the Belgian market
+
+1. **Bilingual by default, ready for a third language.** Dutch (nl-BE) is the
+   default; English is a full mirror. French was intentionally *not*
+   drafted — clinical/pedagogical language in French should come from the
+   client or a native-speaking reviewer rather than be invented, given the
+   sensitivity of the subject matter. The URL structure (`/fr/...`) is easy
+   to add later following the same pattern as `/en/`.
+
+2. **GDPR, and specifically child health-data GDPR.** A full draft privacy
+   policy (`privacybeleid.html` / `en/privacy-policy.html`) covers: special-
+   category data (Art. 9 GDPR) for developmental/health information about
+   children, image rights ("beeldrecht") requiring written parental consent
+   for any child photos/videos, retention periods, and a complaint path to
+   the Belgian Data Protection Authority (Gegevensbeschermingsautoriteit /
+   APD). **This must be reviewed by a lawyer or DPO before launch** — it's a
+   solid first draft, not legal advice.
+
+3. **Legal footer requirements.** Belgian law (Code of Economic Law, Book
+   XII) requires commercial websites to display the business's legal name,
+   address, and enterprise number (KBO/BCE). Footer placeholders are in
+   place — fill in once the practice is registered.
+
+4. **Trust signals Belgian parents recognize.** Copy references collaboration
+   with **CLB** (Centra voor Leerlingenbegeleiding), **Kind en Gezin**, and
+   mentions possible reimbursement via **mutualiteit** (health insurance
+   fund) — common, recognizable trust markers in Flemish family/care
+   services. Confirm which of these actually apply before publishing.
+
+5. **Professional registration.** If there's a relevant Belgian professional
+   association or register for orthopedagogues (e.g. a psychologists'
+   commission registration, or a sector association), add the registration
+   number to the About page — it's a strong trust signal for parents
+   vetting a first-time practice.
+
+6. **Local SEO groundwork.** `LocalBusiness` JSON-LD, `hreflang` alternates
+   between NL/EN, a sitemap, and meta descriptions are in place. Still to
+   do: register a Google Business Profile, target city/region keywords once
+   a practice location is fixed, and consider listing on Belgian care
+   directories (e.g. Zorgkaart, Twizzit, socialezorg.be).
+
+7. **EU/Belgian hosting.** For data-residency comfort given the sensitive
+   data involved, host with an EU-based provider (Belgian options like
+   Combell, or any EU-region host) rather than a US-based one, and pick a
+   `.be` domain to reinforce local trust.
+
+8. **GDPR-safe forms.** The contact form is currently a front-end-only demo
+   (no submissions are sent anywhere). Before launch, wire it to an
+   EU-hosted form processor rather than a generic US SaaS form tool, since
+   the form can end up collecting special-category data about a child.
+
+9. **Booking flow.** Not built yet, but worth adding: an online intake/
+   appointment booking button (e.g. Kalendra, Twizzit, or Calendly with EU
+   data residency settings) once the client has a preferred scheduling tool.
+
+10. **Accessibility.** Semantic HTML, skip-to-content link, keyboard-
+    navigable nav, labeled form fields, and color contrast were built in
+    from the start — important both as good practice for a children's-
+    disability-focused practice and because Belgian/EU accessibility rules
+    increasingly apply to service-sector sites.
+
+## Open questions for the client
+
+- Real name, credentials, years of experience, and professional
+  registration number for the About page.
+- Practice address/region, phone number, and whether sessions are in
+  person, at home, or online.
+- KBO/BTW (VAT) enterprise number once registered.
+- Confirm which mutualiteiten (if any) offer reimbursement.
+- Final logo file and real photography.
+- Whether French is needed at launch or can follow later.

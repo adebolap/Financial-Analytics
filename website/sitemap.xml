@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.cederstem.be/</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/over-mij.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/over-mij.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/about.html" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/aanpak.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/aanpak.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/approach.html" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/voor-wie.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/voor-wie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/for-whom.html" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/contact.html" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/approach.html</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/for-whom.html</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/contact.html</loc>
+  </url>
+</urlset>
