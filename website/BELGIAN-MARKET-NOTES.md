@@ -19,17 +19,25 @@ to edit or hand to any hosting provider) matching the brief in `Ceder_2.pdf`:
 - Cookie consent banner, demo contact form, `robots.txt`, `sitemap.xml`,
   `LocalBusiness` structured data, hreflang tags for NL/EN.
 
-**Reference site (nathalienimako.com):** the network policy for this session
-blocked outbound access to that domain, so I could not literally inspect its
-layout. I designed to the brief's own description instead (calm, warm,
-natural; cream/soft green/beige; lots of white space; simple typography) —
-a well-established look for personal/coaching practice sites, which is
-likely what that reference was showing. Worth a manual side-by-side check
-against the real site before calling this "matched."
+**Reference site (nathalienimako.com):** outbound access to that domain was
+blocked in the first session, so the initial pass was designed purely from
+the brief's own description. A PDF export of the site was shared afterward:
+it's Nathalie Nimako's own Shopify storefront — a faith-based creative brand
+("Kingdom Creatives") selling an e-book (*Called to Create*), an art print,
+and a course. It's a different person and a different kind of business from
+CederStem, so it was a **style** reference, not a content or identity one.
+Its visual language — serif wordmark, black-and-white portrait photography,
+neutral/muted palette, minimal chrome, generous white space, "Let's
+network" style footer — lines up well with what was already built for
+CederStem (serif headings, calm palette, lots of white space); the main
+difference is her site is monochrome where CederStem's brief specifically
+calls for cream/soft green/beige.
 
-**Assumption to verify:** copy on the About page uses the working name
-"Nathalie," inferred from the reference URL (nathalienimako.com). Confirm the
-actual practitioner's name and replace if wrong.
+**Correction:** an earlier draft used "Nathalie" as a placeholder name on
+the About page, inferring it from the reference URL. That was wrong — the
+PDF confirms Nathalie Nimako is a real, unrelated person, so her name has no
+place on CederStem's site. It's been replaced with a `[first name last
+name]` placeholder; add the actual founder's name.
 
 **No real photography or logo file exists yet** (per the brief — client will
 send images). Hero sections currently use color/illustration instead of
