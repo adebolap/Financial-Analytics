@@ -142,6 +142,10 @@ client's real process and CV details.
   as a "Betaling" / "Payment" card on the Contact page (NL + EN). **Still
   needed:** the actual bank account number (IBAN) and session rates —
   currently a placeholder line saying these "follow once confirmed."
+  **Online payment is explicitly out of scope** — no checkout/payment
+  gateway will be built.
+- Mobile responsiveness: confirmed working — hamburger nav below 860px,
+  hero/grids collapse to 1–2 columns, forms stack, tested at 390px width.
 
 ## Still open
 
