@@ -41,18 +41,36 @@ function initContactForm() {
   var form = document.querySelector("[data-contact-form]");
   if (!form) return;
 
-  // Placeholder handler: this form has no backend wired up yet.
-  // Swap the else-branch out once a GDPR-appropriate form endpoint
-  // (see BELGIAN-MARKET-NOTES.md) is connected.
+  // No backend: submitting opens the visitor's own email client with a
+  // pre-filled message addressed to the practice's Gmail inbox.
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    var data = new FormData(form);
+    var lines = [
+      "Naam / Name: " + (data.get("naam") || ""),
+      "E-mail: " + (data.get("email") || ""),
+      "Telefoon / Phone: " + (data.get("telefoon") || ""),
+      "Leeftijd kind / Child's age: " + (data.get("leeftijd") || ""),
+      "",
+      data.get("bericht") || "",
+    ];
+
+    var to = form.getAttribute("data-mailto") || "cederstem@gmail.com";
+    var subject = form.getAttribute("data-mailto-subject") || "Contactaanvraag via cederstem.be";
+    var mailto =
+      "mailto:" + to +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(lines.join("\n"));
+
     var status = form.querySelector("[data-form-status]");
     if (status) {
       status.textContent =
         form.getAttribute("data-success-text") ||
-        "Thank you — this demo form is not yet connected to an inbox.";
+        "Your email app should now open with this message pre-filled.";
       status.hidden = false;
     }
-    form.reset();
+
+    window.location.href = mailto;
   });
 }

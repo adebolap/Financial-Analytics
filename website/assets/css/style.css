@@ -2,14 +2,15 @@
    Calm, warm, natural. Cream / soft green / beige. Lots of white space. */
 
 :root {
-  --cream: #faf6ee;
-  --cream-alt: #f3ede0;
-  --beige: #e9dfcc;
-  --sage: #93a884;
-  --sage-light: #b9c9ac;
-  --sage-dark: #59704f;
-  --ink: #33392f;
-  --ink-soft: #5c6152;
+  --cream: #faf8f0;
+  --cream-alt: #f5f0e3;
+  --beige: #f2e2d2;
+  --sage: #a3b892;
+  --sage-light: #c9d6ba;
+  --sage-dark: #6e8560;
+  --footer-sage: #e3e6cf;
+  --ink: #3a3f32;
+  --ink-soft: #656b58;
   --white: #ffffff;
   --line: rgba(51, 57, 47, 0.12);
   --shadow: 0 20px 50px -30px rgba(51, 57, 47, 0.35);
@@ -412,18 +413,18 @@ textarea { resize: vertical; min-height: 130px; }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--sage-dark);
-  color: #eef2ea;
+  background: var(--footer-sage);
+  color: var(--ink);
   padding: 64px 0 28px;
 }
-.site-footer a { color: #eef2ea; text-decoration: none; }
+.site-footer a { color: var(--ink); text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(58, 63, 50, 0.16);
 }
 @media (max-width: 760px) {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -433,7 +434,7 @@ textarea { resize: vertical; min-height: 130px; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.78rem;
-  color: #cdd9c4;
+  color: var(--ink);
   margin-bottom: 16px;
 }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
@@ -444,7 +445,7 @@ textarea { resize: vertical; min-height: 130px; }
   flex-wrap: wrap;
   gap: 12px;
   font-size: 0.82rem;
-  color: #cdd9c4;
+  color: var(--ink-soft);
 }
 
 /* ---------- Cookie banner ---------- */
