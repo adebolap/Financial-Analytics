@@ -30,6 +30,27 @@ python3 -m http.server 8080
 
 Then open `http://localhost:8080/`.
 
+## Deploying to Vercel
+
+This is a zero-build static site living in the `website/` subfolder of the
+repo, so when importing the repo into Vercel:
+
+1. **Root Directory** → set to `website` (Project Settings → General, or
+   the "Root Directory" field during import).
+2. **Framework Preset** → "Other" (no framework, no build step).
+3. **Build Command** → leave empty.
+4. **Output Directory** → leave empty/default (same as Root Directory).
+
+`vercel.json` (cache headers for `assets/`, a couple of security headers)
+and `404.html` are already in place and picked up automatically once the
+Root Directory is set. `.vercelignore` keeps `README.md` and
+`BELGIAN-MARKET-NOTES.md` out of the public deployment — they're project
+notes, not site content.
+
+Once a custom domain is attached, double-check that the `canonical` /
+`hreflang` tags and `sitemap.xml` (currently pointing at
+`https://www.cederstem.be`) match the real domain.
+
 ## Before launch
 
 See `BELGIAN-MARKET-NOTES.md` for the full list — in short: legal review of
