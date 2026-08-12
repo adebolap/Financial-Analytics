@@ -138,6 +138,10 @@ client's real process and CV details.
 - Real photography: 5 photos of children playing with building blocks
   received and placed — hero image and a 4-photo strip on the homepage
   (NL + EN).
+- Payment: confirmed as bank transfer or payment after the session. Added
+  as a "Betaling" / "Payment" card on the Contact page (NL + EN). **Still
+  needed:** the actual bank account number (IBAN) and session rates —
+  currently a placeholder line saying these "follow once confirmed."
 
 ## Still open
 
@@ -145,6 +149,7 @@ client's real process and CV details.
   registration/membership number for the About page.
 - The "opvoedster" vs. "orthopedagogisch" terminology question above.
 - Which Gmail address the contact form should send to.
+- IBAN / bank account number and session rates for the new Payment card.
 - Typical response time for enquiries (session-length info was given,
   but not reply turnaround).
 - Confirm which mutualiteiten (if any) offer reimbursement.
