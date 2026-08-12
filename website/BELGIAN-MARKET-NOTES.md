@@ -111,51 +111,46 @@ client's real process and CV details.
 
 ## Confirmed by the client (applied to the site)
 
-- Founder's name: **Patience Afram** — now on the About page (NL + EN).
-- Qualification: **Opvoedster** (childcare educator). Applied to the About
-  page credentials list. **Flag:** the rest of the site's copy still says
-  "orthopedagogische begeleiding / orthopedagogical support" throughout,
-  which in Belgium usually implies an orthopedagogiek degree — a different,
-  specific qualification from "opvoedster." Worth confirming with the client
-  whether that positioning/terminology is intentional (e.g. she works under
-  supervision of, or in the tradition of, orthopedagogical methods) or
-  whether the site's language should shift to match "opvoedster" more
-  literally, before this goes live.
-- Region: **Antwerpen · Gent · Brussel** — updated in the footer and
-  Contact page on every NL/EN page.
-- Phone: **0489 05 65 42** — added to the Contact page (`tel:` link) on
-  both languages.
-- KBO/enterprise number: **1022.865.295** — added to every footer.
+- Founder's name: **Patience Afram** — on the About page (NL + EN).
+- Qualification: **Opvoedster** (childcare educator) — on the About page
+  credentials list. **Resolved:** the client confirmed the
+  "orthopedagogische begeleiding / orthopedagogical support" positioning
+  is intentional and should stay throughout the site as-is.
+- **Professional registration/membership number deliberately excluded** —
+  client's choice, to avoid potential bias. Removed from the About page
+  entirely (not even a placeholder).
+- Region: **Antwerpen · Gent · Brussel** — footer and Contact page,
+  every NL/EN page.
+- Phone: **0489 05 65 42** — Contact page (`tel:` link), both languages.
+- KBO/enterprise number: **1022.865.295** — every footer.
 - Services offered: in person, home visits, and online, confirmed —
-  Contact page now states sessions typically run 1–2 hours/day, with
+  Contact page states sessions typically run 1–2 hours/day, with
   holiday-period care up to 4 hours/day.
 - French: confirmed to follow later, not needed at launch.
-- Gmail-based bookings: confirmed as the intended flow (as used on a
-  previous project). **Still needed:** which Gmail address to route
-  enquiries to, and whether it should go through a lightweight static
-  form-forwarder (no backend required) or a mailto: link. The contact
-  form is not wired up to any address yet.
+- Enquiries email: **cederstem@gmail.com** — replaced the placeholder
+  `hallo@cederstem.be` / `privacy@cederstem.be` everywhere (footers,
+  contact card, privacy policy contact). The contact form now builds a
+  `mailto:` link on submit (name/email/phone/child's age/message,
+  pre-filled) addressed to this inbox — no third-party form processor
+  involved, which also simplifies the GDPR story (data never touches a
+  server; the visitor sends it themselves from their own email client).
+  Privacy policy §9 updated to describe this instead of promising a
+  "GDPR-compliant EU-hosted processor before launch."
+- Response time: **"zo snel mogelijk" / "as soon as possible"** — replaces
+  the earlier placeholder on the Contact page.
+- Payment: bank transfer or payment after the session, confirmed. IBAN
+  **BE46 6502 5022 2136** added to the Payment card (NL + EN). Session
+  rates still pending (placeholder: "follow once confirmed"). **Online
+  payment is explicitly out of scope** — no checkout/payment gateway.
 - Real photography: 5 photos of children playing with building blocks
-  received and placed — hero image and a 4-photo strip on the homepage
-  (NL + EN).
-- Payment: confirmed as bank transfer or payment after the session. Added
-  as a "Betaling" / "Payment" card on the Contact page (NL + EN). **Still
-  needed:** the actual bank account number (IBAN) and session rates —
-  currently a placeholder line saying these "follow once confirmed."
-  **Online payment is explicitly out of scope** — no checkout/payment
-  gateway will be built.
+  placed — hero image + 4-photo strip on the homepage (NL + EN).
 - Mobile responsiveness: confirmed working — hamburger nav below 860px,
   hero/grids collapse to 1–2 columns, forms stack, tested at 390px width.
 
 ## Still open
 
-- Diploma year, total years of experience, and any professional
-  registration/membership number for the About page.
-- The "opvoedster" vs. "orthopedagogisch" terminology question above.
-- Which Gmail address the contact form should send to.
-- IBAN / bank account number and session rates for the new Payment card.
-- Typical response time for enquiries (session-length info was given,
-  but not reply turnaround).
-- Confirm which mutualiteiten (if any) offer reimbursement.
+- Diploma year and total years of experience for the About page.
+- Session rates for the Payment card.
 - Final logo file (a placeholder cedar icon is in use).
 - Sign-off on the draft 5-step approach and bio copy, or requested edits.
+- Confirm which mutualiteiten (if any) offer reimbursement.
