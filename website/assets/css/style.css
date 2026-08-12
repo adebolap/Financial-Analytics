@@ -2,14 +2,14 @@
    Calm, warm, natural. Cream / soft green / beige. Lots of white space. */
 
 :root {
-  --cream: #faf6ee;
-  --cream-alt: #f3ede0;
-  --beige: #e9dfcc;
-  --sage: #93a884;
-  --sage-light: #b9c9ac;
-  --sage-dark: #59704f;
-  --ink: #33392f;
-  --ink-soft: #5c6152;
+  --cream: #faf8f0;
+  --cream-alt: #f5f0e3;
+  --beige: #e9e4cd;
+  --sage: #a3b892;
+  --sage-light: #c9d6ba;
+  --sage-dark: #6e8560;
+  --ink: #3a3f32;
+  --ink-soft: #656b58;
   --white: #ffffff;
   --line: rgba(51, 57, 47, 0.12);
   --shadow: 0 20px 50px -30px rgba(51, 57, 47, 0.35);
