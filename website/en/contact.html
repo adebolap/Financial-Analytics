@@ -70,10 +70,24 @@
               <label for="leeftijd">Your child's age</label>
               <input id="leeftijd" name="leeftijd" type="text" placeholder="e.g. 6 years old" />
             </div>
+            <div>
+              <label for="datum">Preferred date (optional)</label>
+              <input id="datum" name="datum" type="date" />
+            </div>
+            <div>
+              <label for="tijdstip">Preferred time</label>
+              <select id="tijdstip" name="tijdstip">
+                <option value="">No preference</option>
+                <option value="Morning (9am-12pm)">Morning (9am-12pm)</option>
+                <option value="Afternoon (12-5pm)">Afternoon (12-5pm)</option>
+                <option value="Evening (5-7pm)">Evening (5-7pm)</option>
+              </select>
+            </div>
             <div class="full">
               <label for="bericht">Your message</label>
               <textarea id="bericht" name="bericht" required></textarea>
             </div>
+            <p class="small full" style="margin: -8px 0 0;">This is a preference, not an automatic confirmation — I'll get in touch to confirm the appointment.</p>
             <div class="full checkbox-row">
               <input id="consent" name="consent" type="checkbox" required />
               <label for="consent" style="font-weight:400; margin:0;">I agree that my data will be used to answer my question, as described in the <a href="privacy-policy.html">privacy policy</a>.</label>

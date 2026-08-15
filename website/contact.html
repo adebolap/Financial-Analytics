@@ -70,10 +70,24 @@
               <label for="leeftijd">Leeftijd van je kind</label>
               <input id="leeftijd" name="leeftijd" type="text" placeholder="bv. 6 jaar" />
             </div>
+            <div>
+              <label for="datum">Gewenste datum (optioneel)</label>
+              <input id="datum" name="datum" type="date" />
+            </div>
+            <div>
+              <label for="tijdstip">Voorkeur tijdstip</label>
+              <select id="tijdstip" name="tijdstip">
+                <option value="">Geen voorkeur</option>
+                <option value="Ochtend (9-12u)">Ochtend (9-12u)</option>
+                <option value="Namiddag (12-17u)">Namiddag (12-17u)</option>
+                <option value="Avond (17-19u)">Avond (17-19u)</option>
+              </select>
+            </div>
             <div class="full">
               <label for="bericht">Je bericht</label>
               <textarea id="bericht" name="bericht" required></textarea>
             </div>
+            <p class="small full" style="margin: -8px 0 0;">Dit is een voorkeur, geen automatische bevestiging — ik neem contact op om de afspraak te bevestigen.</p>
             <div class="full checkbox-row">
               <input id="consent" name="consent" type="checkbox" required />
               <label for="consent" style="font-weight:400; margin:0;">Ik ga akkoord dat mijn gegevens gebruikt worden om mijn vraag te beantwoorden, zoals beschreven in het <a href="privacybeleid.html">privacybeleid</a>.</label>
