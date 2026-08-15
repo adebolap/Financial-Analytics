@@ -146,6 +146,28 @@ client's real process and CV details.
   placed — hero image + 4-photo strip on the homepage (NL + EN).
 - Mobile responsiveness: confirmed working — hamburger nav below 860px,
   hero/grids collapse to 1–2 columns, forms stack, tested at 390px width.
+- **Mutualiteit/reimbursement claim removed entirely** — the homepage
+  badge and the paragraph on the For Whom page are gone (NL + EN). No
+  reimbursement claim is made anywhere on the site now.
+- **Professional positioning:** "Orthopedagogisch begeleider" now used
+  as Patience's title — on the homepage hero eyebrow and in her About
+  page introduction (NL + EN). The service description "orthopedagogische
+  begeleiding en opvoedingsondersteuning" (client-provided phrasing) is
+  used in body copy, meta descriptions, and footer taglines site-wide.
+- **Services list added** — a new "Wat ik aanbied" / "What I offer"
+  section on the Approach page (NL + EN) covering: sociaal-emotionele
+  begeleiding, gedragsgerichte begeleiding, autismebegeleiding,
+  ontwikkelingsgerichte begeleiding, opvoedingsondersteuning, and
+  samenwerking met school/CLB. Autism support card specifically covers
+  structure, communication, emotions, social situations, and daily
+  functioning. Opvoedingsondersteuning card covers behaviour,
+  communication, boundaries, routines, and practical strategies at home.
+- **Location simplified to Antwerpen** — every footer, the Contact page
+  region field, and meta/structured data now say Antwerpen (EN: Antwerp)
+  only, replacing the earlier three-city listing.
+- **Short description** applied to meta descriptions, OG tags, JSON-LD,
+  page titles, and the homepage hero lede, based on the client's example:
+  "CederStem biedt orthopedagogische begeleiding en opvoedingsondersteuning."
 
 ## Still open
 
