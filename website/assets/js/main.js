@@ -52,6 +52,8 @@ function initContactForm() {
       "E-mail: " + (data.get("email") || ""),
       "Telefoon / Phone: " + (data.get("telefoon") || ""),
       "Leeftijd kind / Child's age: " + (data.get("leeftijd") || ""),
+      "Gewenste datum / Preferred date: " + (data.get("datum") || "geen voorkeur / no preference"),
+      "Voorkeur tijdstip / Preferred time: " + (data.get("tijdstip") || "geen voorkeur / no preference"),
       "",
       data.get("bericht") || "",
     ];

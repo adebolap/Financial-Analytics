@@ -99,9 +99,18 @@ client's real process and CV details.
    EU-hosted form processor rather than a generic US SaaS form tool, since
    the form can end up collecting special-category data about a child.
 
-9. **Booking flow.** Not built yet, but worth adding: an online intake/
-   appointment booking button (e.g. Kalendra, Twizzit, or Calendly with EU
-   data residency settings) once the client has a preferred scheduling tool.
+9. **Booking flow.** Built as an in-house preference picker on the Contact
+   page (NL + EN) — a date field and a time-of-day dropdown (Ochtend/
+   Namiddag/Avond), included in the mailto body alongside the rest of the
+   enquiry. Deliberately **not** Calendly/Twizzit/Kalendra or Google
+   Calendar — client explicitly asked for in-house, no external/Google
+   dependency. This is a *preference*, not a live-availability booking:
+   there's no backend, so nothing prevents two people requesting the same
+   slot, and confirmation still happens manually by email. A copy line
+   under the field says exactly that. A true real-time booking system
+   (open slots, locking, auto-confirmation) would need a backend
+   (Vercel serverless functions + a database) — flagged as a future
+   option if the enquiry volume ever makes manual confirmation painful.
 
 10. **Accessibility.** Semantic HTML, skip-to-content link, keyboard-
     navigable nav, labeled form fields, and color contrast were built in
