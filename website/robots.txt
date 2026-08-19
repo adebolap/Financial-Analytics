@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /privacybeleid.html
 Disallow: /en/privacy-policy.html
+Disallow: /fr/politique-de-confidentialite.html
 
 Sitemap: https://www.cederstem.be/sitemap.xml

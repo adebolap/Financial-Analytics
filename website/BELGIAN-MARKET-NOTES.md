@@ -135,7 +135,18 @@ client's real process and CV details.
 - Services offered: in person, home visits, and online, confirmed —
   Contact page states sessions typically run 1–2 hours/day, with
   holiday-period care up to 4 hours/day.
-- French: confirmed to follow later, not needed at launch.
+- **French: built.** Full `/fr/` mirror added — `index.html`,
+  `a-propos.html`, `approche.html`, `pour-qui.html`, `contact.html`
+  (including the date/time preference picker), and
+  `politique-de-confidentialite.html`. Language switcher, hreflang
+  (`fr-be`), sitemap, and robots.txt updated across all three languages.
+  Translated directly (professional Belgian French, "Anvers" for
+  Antwerp) rather than by a native reviewer — worth a proofread pass by
+  a French-speaking reviewer before launch, same caution as the rest of
+  the site's draft copy. CLB is kept as the actual Flemish institution
+  name (glossed once as "centre d'accompagnement des élèves") rather
+  than swapped for the Walloon "PMS," since the practice operates in
+  Antwerp/Flanders regardless of which language a visitor reads in.
 - Enquiries email: **cederstem@gmail.com** — replaced the placeholder
   `hallo@cederstem.be` / `privacy@cederstem.be` everywhere (footers,
   contact card, privacy policy contact). The contact form now builds a
