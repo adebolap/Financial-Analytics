@@ -9,6 +9,8 @@
   --sage-light: #c9d6ba;
   --sage-dark: #6e8560;
   --footer-sage: #e3e6cf;
+  --accent: #a85d3f;
+  --accent-dark: #8f4a30;
   --ink: #3a3f32;
   --ink-soft: #656b58;
   --white: #ffffff;
@@ -223,11 +225,11 @@ p { margin: 0 0 1.2em; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
-  background: var(--sage-dark);
+  background: var(--accent);
   color: var(--white);
   box-shadow: var(--shadow);
 }
-.btn-primary:hover { background: #4a5f41; }
+.btn-primary:hover { background: var(--accent-dark); }
 .btn-outline {
   background: transparent;
   border-color: var(--sage-dark);
