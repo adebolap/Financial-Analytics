@@ -99,18 +99,28 @@ client's real process and CV details.
    EU-hosted form processor rather than a generic US SaaS form tool, since
    the form can end up collecting special-category data about a child.
 
-9. **Booking flow.** Built as an in-house preference picker on the Contact
-   page (NL + EN) — a date field and a time-of-day dropdown (Ochtend/
-   Namiddag/Avond), included in the mailto body alongside the rest of the
-   enquiry. Deliberately **not** Calendly/Twizzit/Kalendra or Google
-   Calendar — client explicitly asked for in-house, no external/Google
-   dependency. This is a *preference*, not a live-availability booking:
-   there's no backend, so nothing prevents two people requesting the same
-   slot, and confirmation still happens manually by email. A copy line
-   under the field says exactly that. A true real-time booking system
-   (open slots, locking, auto-confirmation) would need a backend
-   (Vercel serverless functions + a database) — flagged as a future
-   option if the enquiry volume ever makes manual confirmation painful.
+9. **Booking flow — now server-side, updated.** The Contact page still
+   has the date + time-of-day preference picker (Ochtend/Namiddag/Avond),
+   but submitting it no longer opens the visitor's email client. It now
+   POSTs to `/api/book`, a Vercel serverless function that sends the
+   message via Gmail SMTP (Nodemailer) on the practice's behalf — the
+   booking genuinely happens on the site now, not in a mailto: draft.
+   Explicitly **not** Calendly/Twizzit/Kalendra and **not** the Google
+   Calendar API — this uses Gmail's own SMTP under the account already in
+   use, nothing more, matching the "Gmail as the center of the schedule,
+   A–Z" goal. See README.md for the one-time setup (a Gmail App Password
+   + two Vercel environment variables) needed to activate it — **until
+   that's done, the form automatically falls back to the old mailto:
+   behaviour**, so nothing breaks in the meantime.
+   Same honest limitation as before: still no real calendar, so nothing
+   prevents two people requesting the same date/time — it remains a
+   *preference*, confirmed manually by reply. Stateless by design:
+   nothing is stored anywhere, the sent email is the only record. A true
+   live-availability system (real open slots, automatic locking) would
+   need an actual calendar backend (e.g. embedding Google Calendar's
+   "Appointment schedule," or the Calendar API + a datastore) — still a
+   future option if enquiry volume ever makes manual confirmation
+   painful, not something needed for a new solo practice.
 
 10. **Accessibility.** Semantic HTML, skip-to-content link, keyboard-
     navigable nav, labeled form fields, and color contrast were built in
@@ -209,6 +219,9 @@ client's real process and CV details.
 
 ## Still open
 
+- **Gmail App Password + Vercel env vars** to activate the new on-site
+  booking send (`GMAIL_USER`, `GMAIL_APP_PASSWORD`) — see README.md.
+  Until set, the form silently falls back to the old mailto: behaviour.
 - Diploma year and total years of experience for the About page.
 - Session rates for the Payment card.
 - Final logo file (a placeholder cedar icon is in use).

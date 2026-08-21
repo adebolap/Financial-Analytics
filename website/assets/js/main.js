@@ -41,38 +41,74 @@ function initContactForm() {
   var form = document.querySelector("[data-contact-form]");
   if (!form) return;
 
-  // No backend: submitting opens the visitor's own email client with a
-  // pre-filled message addressed to the practice's Gmail inbox.
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     var data = new FormData(form);
-    var lines = [
-      "Naam / Name: " + (data.get("naam") || ""),
-      "E-mail: " + (data.get("email") || ""),
-      "Telefoon / Phone: " + (data.get("telefoon") || ""),
-      "Leeftijd kind / Child's age: " + (data.get("leeftijd") || ""),
-      "Gewenste datum / Preferred date: " + (data.get("datum") || "geen voorkeur / no preference"),
-      "Voorkeur tijdstip / Preferred time: " + (data.get("tijdstip") || "geen voorkeur / no preference"),
-      "",
-      data.get("bericht") || "",
-    ];
-
-    var to = form.getAttribute("data-mailto") || "cederstem@gmail.com";
-    var subject = form.getAttribute("data-mailto-subject") || "Contactaanvraag via cederstem.be";
-    var mailto =
-      "mailto:" + to +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(lines.join("\n"));
+    var fields = {
+      naam: data.get("naam") || "",
+      email: data.get("email") || "",
+      telefoon: data.get("telefoon") || "",
+      leeftijd: data.get("leeftijd") || "",
+      datum: data.get("datum") || "",
+      tijdstip: data.get("tijdstip") || "",
+      bericht: data.get("bericht") || "",
+      lang: document.documentElement.lang ? document.documentElement.lang.slice(0, 2) : "nl",
+    };
 
     var status = form.querySelector("[data-form-status]");
-    if (status) {
-      status.textContent =
-        form.getAttribute("data-success-text") ||
-        "Your email app should now open with this message pre-filled.";
-      status.hidden = false;
-    }
+    var submitBtn = form.querySelector("button[type=submit]");
+    if (submitBtn) submitBtn.disabled = true;
 
-    window.location.href = mailto;
+    fetch("/api/book", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(fields),
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("book API responded with " + res.status);
+        return res.json();
+      })
+      .then(function () {
+        if (status) {
+          status.textContent =
+            form.getAttribute("data-success-text") ||
+            "Thank you — your message has been sent.";
+          status.hidden = false;
+        }
+        form.reset();
+      })
+      .catch(function () {
+        // Backend not configured yet, or the request failed for any
+        // reason: fall back to a mailto: draft so the message is never
+        // silently lost.
+        var lines = [
+          "Naam / Name: " + fields.naam,
+          "E-mail: " + fields.email,
+          "Telefoon / Phone: " + fields.telefoon,
+          "Leeftijd kind / Child's age: " + fields.leeftijd,
+          "Gewenste datum / Preferred date: " + (fields.datum || "geen voorkeur / no preference"),
+          "Voorkeur tijdstip / Preferred time: " + (fields.tijdstip || "geen voorkeur / no preference"),
+          "",
+          fields.bericht,
+        ];
+        var to = form.getAttribute("data-mailto") || "cederstem@gmail.com";
+        var subject = form.getAttribute("data-mailto-subject") || "Contactaanvraag via cederstem.be";
+        var mailto =
+          "mailto:" + to +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(lines.join("\n"));
+
+        if (status) {
+          status.textContent =
+            form.getAttribute("data-fallback-text") ||
+            "Your email app should now open with this message pre-filled.";
+          status.hidden = false;
+        }
+        window.location.href = mailto;
+      })
+      .finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   });
 }
