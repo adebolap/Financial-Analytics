@@ -12,9 +12,11 @@ website/
   index.html, over-mij.html, aanpak.html, voor-wie.html,
   contact.html, privacybeleid.html      # Dutch (default)
   en/                                    # English mirror
+  fr/                                    # French mirror
   assets/css/style.css                   # shared design system
-  assets/js/main.js                      # nav toggle, cookie banner, demo form
+  assets/js/main.js                      # nav toggle, cookie banner, contact form
   assets/img/logo-cedar.svg              # placeholder cedar-tree logo
+  assets/img/gallery/                    # real client photography
   robots.txt, sitemap.xml
   BELGIAN-MARKET-NOTES.md                # what's Belgium-specific + open TODOs
 ```

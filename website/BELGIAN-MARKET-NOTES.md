@@ -135,7 +135,18 @@ client's real process and CV details.
 - Services offered: in person, home visits, and online, confirmed —
   Contact page states sessions typically run 1–2 hours/day, with
   holiday-period care up to 4 hours/day.
-- French: confirmed to follow later, not needed at launch.
+- **French: built.** Full `/fr/` mirror added — `index.html`,
+  `a-propos.html`, `approche.html`, `pour-qui.html`, `contact.html`
+  (including the date/time preference picker), and
+  `politique-de-confidentialite.html`. Language switcher, hreflang
+  (`fr-be`), sitemap, and robots.txt updated across all three languages.
+  Translated directly (professional Belgian French, "Anvers" for
+  Antwerp) rather than by a native reviewer — worth a proofread pass by
+  a French-speaking reviewer before launch, same caution as the rest of
+  the site's draft copy. CLB is kept as the actual Flemish institution
+  name (glossed once as "centre d'accompagnement des élèves") rather
+  than swapped for the Walloon "PMS," since the practice operates in
+  Antwerp/Flanders regardless of which language a visitor reads in.
 - Enquiries email: **cederstem@gmail.com** — replaced the placeholder
   `hallo@cederstem.be` / `privacy@cederstem.be` everywhere (footers,
   contact card, privacy policy contact). The contact form now builds a
@@ -178,6 +189,24 @@ client's real process and CV details.
   page titles, and the homepage hero lede, based on the client's example:
   "CederStem biedt orthopedagogische begeleiding en opvoedingsondersteuning."
 
+## Conversion/layout additions (site-wide, all 3 languages)
+
+- **Sticky header CTA.** A compact "Plan een kennismaking" / "Book an
+  introduction" / "Planifier une prise de contact" button now sits in
+  the header nav, which is already `position: sticky`, so it's visible
+  at all times while scrolling on desktop. Hidden below 860px and
+  folded into the mobile dropdown menu instead, to avoid crowding the
+  small-screen header.
+- **FAQ accordion** on every homepage (native `<details>/<summary>`,
+  no JS), addressing the questions most likely to stall a booking:
+  what happens at the intro call, languages, location, programme
+  length, school/CLB collaboration, and cost (answered honestly as
+  "discussed during the intro call" — no invented numbers, and no
+  mutualiteit/reimbursement claim, consistent with its earlier removal).
+- **"What happens next" mini-timeline** on every Contact page, right
+  above the form: send message → reply asap → plan the intro. Reduces
+  uncertainty about what submitting the form actually leads to.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page.
@@ -185,3 +214,7 @@ client's real process and CV details.
 - Final logo file (a placeholder cedar icon is in use).
 - Sign-off on the draft 5-step approach and bio copy, or requested edits.
 - Confirm which mutualiteiten (if any) offer reimbursement.
+- A short intro video from Patience (highest-impact trust builder,
+  still the one open item from the original brief's "Able to add
+  Video" requirement) and 1–2 parent testimonials once available —
+  both flagged as the next-biggest conversion levers, not yet built.
