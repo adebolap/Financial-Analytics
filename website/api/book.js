@@ -3,7 +3,7 @@
 // visitor's own email client — submission happens on the site.
 //
 // Stateless: nothing is persisted anywhere. The two emails sent below (one
-// to the CederStem inbox, one confirmation back to the visitor) are the
+// to the CederStam inbox, one confirmation back to the visitor) are the
 // only record of the enquiry. There is no calendar/slot locking, so this
 // does not prevent two people requesting the same date — the practice
 // still confirms manually by replying to the enquiry email, same as
@@ -12,7 +12,7 @@
 
 const nodemailer = require("nodemailer");
 
-const BUSINESS_NAME = "CederStem";
+const BUSINESS_NAME = "CederStam";
 
 const TEXT = {
   nl: {

@@ -1,4 +1,4 @@
-// CederStem — shared site behaviour (nav toggle, cookie consent, contact form)
+// CederStam — shared site behaviour (nav toggle, cookie consent, contact form)
 
 document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".nav-toggle");
