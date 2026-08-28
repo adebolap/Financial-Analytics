@@ -219,9 +219,10 @@ client's real process and CV details.
 
 ## Still open
 
-- **Gmail App Password + Vercel env vars** to activate the new on-site
-  booking send (`GMAIL_USER`, `GMAIL_APP_PASSWORD`) — see README.md.
-  Until set, the form silently falls back to the old mailto: behaviour.
+- ~~Gmail App Password + Vercel env vars~~ — **done**, `GMAIL_USER` and
+  `GMAIL_APP_PASSWORD` added in Vercel. Pending a redeploy + a live test
+  submission to confirm both the confirmation email and the enquiry
+  itself actually land (see README.md's Part 4).
 - Diploma year and total years of experience for the About page.
 - Session rates for the Payment card.
 - Final logo file (a placeholder cedar icon is in use).
