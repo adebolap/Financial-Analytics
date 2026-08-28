@@ -1,4 +1,4 @@
-# CederStem website — Belgian market notes
+# CederStam website — Belgian market notes
 
 This doc explains what was built, the assumptions made, and what's still needed
 from the client before this goes live.
@@ -25,18 +25,18 @@ the brief's own description. A PDF export of the site was shared afterward:
 it's Nathalie Nimako's own Shopify storefront — a faith-based creative brand
 ("Kingdom Creatives") selling an e-book (*Called to Create*), an art print,
 and a course. It's a different person and a different kind of business from
-CederStem, so it was a **style** reference, not a content or identity one.
+CederStam, so it was a **style** reference, not a content or identity one.
 Its visual language — serif wordmark, black-and-white portrait photography,
 neutral/muted palette, minimal chrome, generous white space, "Let's
 network" style footer — lines up well with what was already built for
-CederStem (serif headings, calm palette, lots of white space); the main
-difference is her site is monochrome where CederStem's brief specifically
+CederStam (serif headings, calm palette, lots of white space); the main
+difference is her site is monochrome where CederStam's brief specifically
 calls for cream/soft green/beige.
 
 **Correction:** an earlier draft used "Nathalie" as a placeholder name on
 the About page, inferring it from the reference URL. That was wrong — the
 PDF confirms Nathalie Nimako is a real, unrelated person, so her name has no
-place on CederStem's site. It's been replaced with a `[first name last
+place on CederStam's site. It's been replaced with a `[first name last
 name]` placeholder; add the actual founder's name.
 
 **No real photography or logo file exists yet** (per the brief — client will
@@ -197,7 +197,7 @@ client's real process and CV details.
   only, replacing the earlier three-city listing.
 - **Short description** applied to meta descriptions, OG tags, JSON-LD,
   page titles, and the homepage hero lede, based on the client's example:
-  "CederStem biedt orthopedagogische begeleiding en opvoedingsondersteuning."
+  "CederStam biedt orthopedagogische begeleiding en opvoedingsondersteuning."
 
 ## Conversion/layout additions (site-wide, all 3 languages)
 

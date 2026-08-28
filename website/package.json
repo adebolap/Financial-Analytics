@@ -1,7 +1,7 @@
 {
-  "name": "cederstem-website",
+  "name": "cederstam-website",
   "private": true,
-  "description": "Static site + one Vercel serverless function (api/book.js) for the CederStem contact form.",
+  "description": "Static site + one Vercel serverless function (api/book.js) for the CederStam contact form.",
   "dependencies": {
     "nodemailer": "^6.9.14"
   }
