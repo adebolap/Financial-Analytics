@@ -5,31 +5,26 @@
     <loc>https://www.cederstem.be/</loc>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/" />
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.cederstem.be/fr/" />
   </url>
   <url>
     <loc>https://www.cederstem.be/over-mij.html</loc>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/over-mij.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/about.html" />
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.cederstem.be/fr/a-propos.html" />
   </url>
   <url>
     <loc>https://www.cederstem.be/aanpak.html</loc>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/aanpak.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/approach.html" />
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.cederstem.be/fr/approche.html" />
   </url>
   <url>
     <loc>https://www.cederstem.be/voor-wie.html</loc>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/voor-wie.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/for-whom.html" />
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.cederstem.be/fr/pour-qui.html" />
   </url>
   <url>
     <loc>https://www.cederstem.be/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/contact.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/contact.html" />
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.cederstem.be/fr/contact.html" />
   </url>
   <url>
     <loc>https://www.cederstem.be/en/</loc>
@@ -45,20 +40,5 @@
   </url>
   <url>
     <loc>https://www.cederstem.be/en/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://www.cederstem.be/fr/</loc>
-  </url>
-  <url>
-    <loc>https://www.cederstem.be/fr/a-propos.html</loc>
-  </url>
-  <url>
-    <loc>https://www.cederstem.be/fr/approche.html</loc>
-  </url>
-  <url>
-    <loc>https://www.cederstem.be/fr/pour-qui.html</loc>
-  </url>
-  <url>
-    <loc>https://www.cederstem.be/fr/contact.html</loc>
   </url>
 </urlset>

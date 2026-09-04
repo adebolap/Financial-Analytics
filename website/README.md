@@ -13,13 +13,15 @@ website/
   index.html, over-mij.html, aanpak.html, voor-wie.html,
   contact.html, privacybeleid.html      # Dutch (default)
   en/                                    # English mirror
-  fr/                                    # French mirror
   api/book.js                            # Vercel serverless function — sends
                                           # the contact form via Gmail SMTP
   package.json                           # only dependency: nodemailer
   assets/css/style.css                   # shared design system
   assets/js/main.js                      # nav toggle, cookie banner, contact form
-  assets/img/logo-cedar.svg              # placeholder cedar-tree logo
+  assets/img/logo-cederstam.png          # real logo (source, transparent bg)
+  assets/img/logo-icon.png               # cropped icon used in header/footer
+  assets/img/favicon.png, apple-touch-icon.png
+  assets/img/patience-portrait.jpg       # About page photo
   assets/img/gallery/                    # real client photography
   robots.txt, sitemap.xml
   BELGIAN-MARKET-NOTES.md                # what's Belgium-specific + open TODOs

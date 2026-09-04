@@ -145,18 +145,11 @@ client's real process and CV details.
 - Services offered: in person, home visits, and online, confirmed —
   Contact page states sessions typically run 1–2 hours/day, with
   holiday-period care up to 4 hours/day.
-- **French: built.** Full `/fr/` mirror added — `index.html`,
-  `a-propos.html`, `approche.html`, `pour-qui.html`, `contact.html`
-  (including the date/time preference picker), and
-  `politique-de-confidentialite.html`. Language switcher, hreflang
-  (`fr-be`), sitemap, and robots.txt updated across all three languages.
-  Translated directly (professional Belgian French, "Anvers" for
-  Antwerp) rather than by a native reviewer — worth a proofread pass by
-  a French-speaking reviewer before launch, same caution as the rest of
-  the site's draft copy. CLB is kept as the actual Flemish institution
-  name (glossed once as "centre d'accompagnement des élèves") rather
-  than swapped for the Walloon "PMS," since the practice operates in
-  Antwerp/Flanders regardless of which language a visitor reads in.
+- **French: built, then removed.** A full `/fr/` mirror was built (see
+  git history), but the client asked to drop French entirely — the site
+  is bilingual (NL/EN) only now. The `fr/` folder, its hreflang/sitemap/
+  robots.txt entries, and the `fr` block in `api/book.js` were all
+  deleted.
 - Enquiries email: **cederstem@gmail.com** — replaced the placeholder
   `hallo@cederstem.be` / `privacy@cederstem.be` everywhere (footers,
   contact card, privacy policy contact). The contact form now builds a
@@ -168,10 +161,11 @@ client's real process and CV details.
   "GDPR-compliant EU-hosted processor before launch."
 - Response time: **"zo snel mogelijk" / "as soon as possible"** — replaces
   the earlier placeholder on the Contact page.
-- Payment: bank transfer or payment after the session, confirmed. IBAN
-  **BE46 6502 5022 2136** added to the Payment card (NL + EN). Session
-  rates still pending (placeholder: "follow once confirmed"). **Online
-  payment is explicitly out of scope** — no checkout/payment gateway.
+- Payment: the IBAN was later **removed** from the Payment card at the
+  client's request — it now says payment details are agreed directly
+  with the parent (NL + EN). Session rates still pending (placeholder:
+  "follow once confirmed"). **Online payment is explicitly out of
+  scope** — no checkout/payment gateway.
 - Real photography: 5 photos of children playing with building blocks
   placed — hero image + 4-photo strip on the homepage (NL + EN).
 - Mobile responsiveness: confirmed working — hamburger nav below 860px,
@@ -199,35 +193,92 @@ client's real process and CV details.
   page titles, and the homepage hero lede, based on the client's example:
   "CederStam biedt orthopedagogische begeleiding en opvoedingsondersteuning."
 
-## Conversion/layout additions (site-wide, all 3 languages)
+## Conversion/layout additions (site-wide, NL + EN)
 
 - **Sticky header CTA.** A compact "Plan een kennismaking" / "Book an
-  introduction" / "Planifier une prise de contact" button now sits in
-  the header nav, which is already `position: sticky`, so it's visible
-  at all times while scrolling on desktop. Hidden below 860px and
-  folded into the mobile dropdown menu instead, to avoid crowding the
-  small-screen header.
+  introduction" button now sits in the header nav, which is already
+  `position: sticky`, so it's visible at all times while scrolling on
+  desktop. Hidden below 860px and folded into the mobile dropdown menu
+  instead, to avoid crowding the small-screen header.
 - **FAQ accordion** on every homepage (native `<details>/<summary>`,
   no JS), addressing the questions most likely to stall a booking:
   what happens at the intro call, languages, location, programme
-  length, school/CLB collaboration, and cost (answered honestly as
+  length, school collaboration, and cost (answered honestly as
   "discussed during the intro call" — no invented numbers, and no
   mutualiteit/reimbursement claim, consistent with its earlier removal).
 - **"What happens next" mini-timeline** on every Contact page, right
   above the form: send message → reply asap → plan the intro. Reduces
   uncertainty about what submitting the form actually leads to.
 
+## Round 4 — brand/content update batch (2026-09-04)
+
+Applied from a client message with the real logo file, a portrait photo,
+and a list of instructions. Site-wide, NL + EN:
+
+- **Real logo applied.** The client's icon-and-wordmark PNG is now the
+  source file (`assets/img/logo-cederstam.png`, background removed for
+  transparency). A cropped icon-only version (`logo-icon.png`) replaced
+  the placeholder inline cedar SVG in the header and footer brand marks
+  on every page. `favicon.png` and `apple-touch-icon.png` were generated
+  from the same icon for the browser tab / home-screen icon.
+- **About page photo added.** The client's portrait photo
+  (`assets/img/patience-portrait.jpg`) now sits in the About page hero,
+  in the same two-column `hero-grid`/`hero-visual` layout already used
+  on the homepage.
+- **Footer restyled**: white background, black text (was the sage-tinted
+  footer from the original palette).
+- **French removed entirely** (see note in the "Confirmed by the client"
+  section above) — site is NL/EN only again.
+- **CLB and Kind en Gezin collaboration removed.** Per the client,
+  CederStam does not position itself as collaborating with CLB or Kind
+  en Gezin — only with schools and directly with parents. Updated the
+  homepage badge + FAQ, the Approach page (services card, step 02,
+  "what is orthopedagogical support" section), the For Whom page ("good
+  to know" section), and Privacy Policy §6 (data-sharing) accordingly.
+- **"Teachers & care professionals" audience removed** from the
+  homepage's "Who I'm here for" 3-card grid (now 2 cards, `grid-2`) and
+  the For Whom page's 6-card grid (now 5 cards).
+- **IBAN removed** from the Payment card on the Contact page — now says
+  payment details are agreed directly with the parent.
+- **Dutch gloss removed from the EN site.** The English pages no longer
+  show "(orthopedagogical support worker)" as a parenthetical next to
+  the Dutch term "orthopedagogisch begeleider" — the EN pages now read
+  "orthopedagogical support worker" only, on the homepage hero and the
+  About page intro.
+
+### Flagged for the client — not acted on, needs a plain-language answer
+
+Two items in that same message were ambiguous enough that guessing felt
+riskier than asking, especially since one touches sensitive disability
+terminology:
+
+1. **"Cedar Tribe: only in Antwerp."** No prior context for "Cedar
+   Tribe" anywhere in this project — unclear whether this is a rename,
+   a new section/program, or refers to something outside the website.
+   The site's location has already been narrowed to Antwerpen only in
+   an earlier round (see "Confirmed by the client" above), so if this
+   is just re-confirming that, no further change is needed — but it
+   wasn't safe to assume that without checking.
+2. **"Autistic Kids / Children with intellectual disability becomes
+   behavioural challenges."** Unclear whether this means (a) renaming
+   the existing "Kinderen met een verstandelijke beperking / Children
+   with an intellectual disability" audience card to "Behavioural
+   challenges," (b) adding a new, separate "Autistic kids" card
+   alongside it, or (c) something else. The "Voor wie?"/"For whom?"
+   pages still show the original wording pending clarification.
+
 ## Still open
 
-- ~~Gmail App Password + Vercel env vars~~ — **done**, `GMAIL_USER` and
-  `GMAIL_APP_PASSWORD` added in Vercel. Pending a redeploy + a live test
-  submission to confirm both the confirmation email and the enquiry
-  itself actually land (see README.md's Part 4).
 - Diploma year and total years of experience for the About page.
-- Session rates for the Payment card.
-- Final logo file (a placeholder cedar icon is in use).
+- Session rates for the Payment card (now that IBAN is gone, the exact
+  payment arrangement with parents also needs to be written up).
 - Sign-off on the draft 5-step approach and bio copy, or requested edits.
 - Confirm which mutualiteiten (if any) offer reimbursement.
+- Answers to the two flagged items above ("Cedar Tribe" and the autism/
+  intellectual-disability wording).
+- Whether the domain should become `cederstam.be` to match the corrected
+  brand spelling, or stay `cederstem.be`/`cederstem@gmail.com` since
+  that account is already live and configured.
 - A short intro video from Patience (highest-impact trust builder,
   still the one open item from the original brief's "Able to add
   Video" requirement) and 1–2 parent testimonials once available —
