@@ -1,21 +1,20 @@
-/* CederStem — shared design system
-   Calm, warm, natural. Cream / soft green / beige. Lots of white space. */
+/* CederStam — shared design system
+   White background, green accents matching the logo. Lots of white space. */
 
 :root {
-  --cream: #faf8f0;
-  --cream-alt: #f5f0e3;
-  --beige: #f2e2d2;
-  --sage: #a3b892;
-  --sage-light: #c9d6ba;
-  --sage-dark: #6e8560;
-  --footer-sage: #e3e6cf;
-  --accent: #a85d3f;
-  --accent-dark: #8f4a30;
-  --ink: #3a3f32;
-  --ink-soft: #656b58;
+  --cream: #ffffff;
+  --cream-alt: #f5faf6;
+  --beige: #e7f4ea;
+  --sage: #1d7a41;
+  --sage-light: #5fae7c;
+  --sage-dark: #145c32;
+  --accent: #1d7a41;
+  --accent-dark: #145c32;
+  --ink: #26302a;
+  --ink-soft: #5b665e;
   --white: #ffffff;
-  --line: rgba(51, 57, 47, 0.12);
-  --shadow: 0 20px 50px -30px rgba(51, 57, 47, 0.35);
+  --line: rgba(20, 92, 50, 0.14);
+  --shadow: 0 20px 50px -30px rgba(20, 92, 50, 0.3);
 
   --font-head: "Fraunces", Georgia, "Iowan Old Style", serif;
   --font-body: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -97,7 +96,7 @@ p { margin: 0 0 1.2em; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 246, 238, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -249,8 +248,8 @@ p { margin: 0 0 1.2em; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(60% 55% at 85% 10%, rgba(147, 168, 132, 0.28), transparent 60%),
-    radial-gradient(50% 50% at 8% 90%, rgba(233, 223, 204, 0.9), transparent 60%),
+    radial-gradient(60% 55% at 85% 10%, rgba(29, 122, 65, 0.14), transparent 60%),
+    radial-gradient(50% 50% at 8% 90%, rgba(95, 174, 124, 0.12), transparent 60%),
     var(--cream);
 }
 .hero-grid {
