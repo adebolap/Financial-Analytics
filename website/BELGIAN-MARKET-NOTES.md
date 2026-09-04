@@ -246,26 +246,23 @@ and a list of instructions. Site-wide, NL + EN:
   "orthopedagogical support worker" only, on the homepage hero and the
   About page intro.
 
-### Flagged for the client — not acted on, needs a plain-language answer
+### Two items resolved after asking the client
 
 Two items in that same message were ambiguous enough that guessing felt
 riskier than asking, especially since one touches sensitive disability
-terminology:
+terminology. Both are now resolved:
 
-1. **"Cedar Tribe: only in Antwerp."** No prior context for "Cedar
-   Tribe" anywhere in this project — unclear whether this is a rename,
-   a new section/program, or refers to something outside the website.
-   The site's location has already been narrowed to Antwerpen only in
-   an earlier round (see "Confirmed by the client" above), so if this
-   is just re-confirming that, no further change is needed — but it
-   wasn't safe to assume that without checking.
+1. **"Cedar Tribe: only in Antwerp."** Confirmed this just meant
+   "CederStam is only for the Antwerp region" — a re-confirmation of the
+   location scope already applied in an earlier round (see "Confirmed
+   by the client" above). No further change needed.
 2. **"Autistic Kids / Children with intellectual disability becomes
-   behavioural challenges."** Unclear whether this means (a) renaming
-   the existing "Kinderen met een verstandelijke beperking / Children
-   with an intellectual disability" audience card to "Behavioural
-   challenges," (b) adding a new, separate "Autistic kids" card
-   alongside it, or (c) something else. The "Voor wie?"/"For whom?"
-   pages still show the original wording pending clarification.
+   behavioural challenges."** Confirmed: rename the existing card only
+   (no separate autism card added). The "Kinderen met een verstandelijke
+   beperking" / "Children with an intellectual disability" audience card
+   on the "Voor wie?"/"For whom?" pages is now **"Gedragsuitdagingen"**
+   / **"Behavioural challenges"** (card description unchanged). Meta
+   descriptions on both pages updated to match.
 
 ## Still open
 
@@ -274,8 +271,6 @@ terminology:
   payment arrangement with parents also needs to be written up).
 - Sign-off on the draft 5-step approach and bio copy, or requested edits.
 - Confirm which mutualiteiten (if any) offer reimbursement.
-- Answers to the two flagged items above ("Cedar Tribe" and the autism/
-  intellectual-disability wording).
 - Whether the domain should become `cederstam.be` to match the corrected
   brand spelling, or stay `cederstem.be`/`cederstem@gmail.com` since
   that account is already live and configured.

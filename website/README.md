@@ -2,9 +2,9 @@
 
 Mostly-static site (plain HTML/CSS/JS) for CederStam, an orthopedagogical
 practice offering individual guidance to children aged 0–12 with learning or
-developmental difficulties, multilingual newcomers, and children with
-intellectual disabilities. One serverless function (`api/book.js`) handles
-the contact form.
+developmental difficulties, multilingual newcomers, and behavioural
+challenges. One serverless function (`api/book.js`) handles the contact
+form.
 
 ## Structure
 
