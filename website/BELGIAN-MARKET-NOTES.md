@@ -264,9 +264,52 @@ terminology. Both are now resolved:
    / **"Behavioural challenges"** (card description unchanged). Meta
    descriptions on both pages updated to match.
 
+## Round 5 — About page copy cleanup
+
+The About page ("Mijn verhaal" / "My story" and "Ervaring & opleiding" /
+"Experience & education") no longer shows bracketed placeholder text
+(`[jaartal diploma aan te vullen]`, `[Aantal] jaar ervaring`,
+`[organisatie / school / praktijk]`, etc.) or the "this is placeholder
+text" notice. It's rewritten to use only what's actually confirmed —
+qualified opvoedster, experience supporting children with learning and
+developmental difficulties, affinity with multilingual families — without
+inventing a specific year or number. If/when the diploma year and exact
+years of experience are confirmed, they can be added back in as specific
+numbers.
+
+## Round 6 — palette redesign: white background, green accents (2026-09-04)
+
+The client asked for a redesign to a white background with green accents
+matching the real logo's colors. `assets/css/style.css` is built entirely
+on CSS custom properties, so this was mostly a `:root` swap plus a couple
+of hardcoded gradient tweaks:
+
+- `--cream` (main background) is now pure white `#ffffff`, replacing the
+  warm off-white.
+- `--sage` / `--sage-dark` / `--sage-light` — the headings, icons, badges,
+  step numbers, quote-block, and outline-button colors — are now sampled
+  from the logo's green (`#1d7a41` core, `#145c32` dark, `#5fae7c` light;
+  sampled directly from the pixels in `logo-icon.png`).
+- `--accent` / `--accent-dark` (primary CTA buttons) were the reserved
+  terracotta from an earlier round — now unified with the same green
+  family (`#1d7a41` / `#145c32`), so the whole site reads as one
+  white-and-green system instead of white/sage/terracotta.
+- `--cream-alt` and `--beige` (alternating section backgrounds) are now
+  very light green tints instead of warm cream/beige, so contrast
+  sections stay in the green family too.
+- The header's translucent background and the hero's radial-gradient
+  glow were hardcoded warm-toned `rgba()` values — updated to green-toned
+  equivalents so they don't clash with the new palette.
+- The footer stays white-background/black-text as set in an earlier
+  round (that request is independent of this one and wasn't touched).
+- `--footer-sage` (an unused leftover variable from the old palette) was
+  removed.
+
 ## Still open
 
-- Diploma year and total years of experience for the About page.
+- Diploma year and total years of experience for the About page (copy
+  now reads naturally without them, but adding the real numbers would
+  strengthen credibility).
 - Session rates for the Payment card (now that IBAN is gone, the exact
   payment arrangement with parents also needs to be written up).
 - Sign-off on the draft 5-step approach and bio copy, or requested edits.
