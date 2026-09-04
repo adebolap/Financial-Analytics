@@ -43,20 +43,6 @@ const TEXT = {
       geen: "no preference",
     },
   },
-  fr: {
-    ownerSubject: (naam, ref) => `Nouvelle demande de contact — ${naam} (${ref})`,
-    confirmSubject: () => `Confirmation de votre demande — ${BUSINESS_NAME}`,
-    confirmBody: (naam, ref) =>
-      `Bonjour ${naam},\n\n` +
-      `Merci pour votre message à ${BUSINESS_NAME}. J'ai bien reçu votre demande et je réponds dans les meilleurs délais.\n\n` +
-      `Votre référence : ${ref}\n\n` +
-      `À bientôt,\nPatience — ${BUSINESS_NAME}`,
-    fields: {
-      naam: "Nom", email: "E-mail", telefoon: "Téléphone",
-      leeftijd: "Âge de l'enfant", datum: "Date souhaitée", tijdstip: "Moment préféré",
-      geen: "pas de préférence",
-    },
-  },
 };
 
 function isValidEmail(value) {
