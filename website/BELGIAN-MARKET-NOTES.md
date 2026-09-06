@@ -305,6 +305,59 @@ of hardcoded gradient tweaks:
 - `--footer-sage` (an unused leftover variable from the old palette) was
   removed.
 
+## Round 7 — copy polish and "elevate the look and feel" (2026-09-04)
+
+Two follow-up requests after the palette redesign:
+
+**No em dashes, anywhere on the site.** All NL + EN page titles now use a
+middot (`CederStam · Orthopedagogische begeleiding & ...`), consistent
+with the existing "Orthopedagogisch begeleider · 0 tot 12 jaar" style
+already used in badges and eyebrows. Body copy was rephrased sentence by
+sentence with commas, colons, periods, or parentheses, whichever reads
+most naturally, rather than a blind find-and-replace.
+
+**Four "elevate the look and feel" suggestions were implemented** (a
+fifth, adding a testimonial, was explicitly excluded since there's no
+testimonial yet):
+
+- **Scroll-reveal animation.** A small IntersectionObserver in
+  `main.js` fades and slides in cards, section heads, quote blocks, FAQ
+  items, steps, and hero content as they enter the viewport. It's
+  progressive enhancement only: the hidden state is gated behind a
+  `.reveal-ready` class that JS itself adds to `<html>`, so if
+  JavaScript fails or is disabled, everything stays fully visible. It
+  also respects `prefers-reduced-motion`. (Caught and fixed a CSS
+  specificity bug during testing: the hidden-state selector
+  `.reveal-ready .hero-grid > div` was more specific than
+  `.reveal-ready .is-visible`, so the reveal never actually applied
+  until the visible-state selectors were rewritten to match the same
+  compound pattern plus `.is-visible`.)
+- **More real photography.** The Approach and For Whom pages previously
+  had text-only heroes. Both now use the same `hero-grid` +
+  `hero-visual` split as Home/About, reusing the existing gallery
+  photos (`kind-duplo-2.jpg` and `kind-duplo-3.jpg`, both already used
+  smaller in the homepage photo strip) since no new photos were
+  provided for this round.
+- **Hero photo polish.** `.hero-visual` now has a subtle green-tinted
+  gradient overlay (via `::after`) plus a soft inset highlight border,
+  and a gentle zoom on hover, so the large photos on Home/About/
+  Approach/For Whom feel a bit more considered instead of a plain
+  cropped rectangle.
+- **Custom, brand-consistent icon set.** The generic outline icons
+  (a plain "list" icon standing in for "multilingual families," and no
+  icons at all on the For Whom/Approach card grids) were replaced with
+  a small hand-drawn set in the same visual language (24×24, 1.6 stroke,
+  round caps/joins): a globe for multilingual families/newcomers, an
+  open book for learning difficulties, a two-leaf sprout for
+  developmental support (a deliberate nod to the cedar/tree brand
+  motif), a heart for behavioural challenges, overlapping circles for
+  social-emotional support, a target for behaviour-focused support, an
+  infinity loop for autism support (chosen over a puzzle piece, which
+  is dated and often considered stigmatizing in current autism
+  advocacy), and a house for school collaboration. Existing icons
+  (parent figure, envelope/phone/pin on Contact) got matching round
+  linecaps/linejoins for visual consistency.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy

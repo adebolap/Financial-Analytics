@@ -12,7 +12,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initCookieBanner();
   initContactForm();
+  initScrollReveal();
 });
+
+function initScrollReveal() {
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var targets = document.querySelectorAll(
+    ".card, .section-head, .quote-block, .mini-timeline-item, .faq-item, .hero-grid > div, .photo-grid > img, .step"
+  );
+  if (!targets.length) return;
+
+  document.documentElement.classList.add("reveal-ready");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  targets.forEach(function (el, i) {
+    el.style.transitionDelay = (i % 3) * 70 + "ms";
+    observer.observe(el);
+  });
+}
 
 function initCookieBanner() {
   var banner = document.querySelector("[data-cookie-banner]");
