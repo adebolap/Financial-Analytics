@@ -358,6 +358,58 @@ testimonial yet):
   (parent figure, envelope/phone/pin on Contact) got matching round
   linecaps/linejoins for visual consistency.
 
+## Round 8 — structural reference from thoroughfaredesign.com (2026-09-23)
+
+The client sent thoroughfaredesign.com (an interior-design/branding
+studio's site) as a structural and "look and feel" reference, asking to
+keep our own white/green colors rather than adopt their brown/olive/taupe
+palette. Its outbound domain is blocked by this environment's network
+proxy, so the reference was reviewed from a screenshot and a screen
+recording the client provided (frames extracted with a locally installed
+static ffmpeg, since the sandbox has no browser tool). Adapted structural
+patterns, site-wide unless noted:
+
+- **Utility top bar** above the header on every page: a single centered
+  CTA link ("Plan een vrijblijvend kennismakingsgesprek" / "Book a free
+  introductory conversation") on a solid green bar, mirroring the
+  reference's "Book a complimentary discovery call" bar.
+- **Full-bleed photo banner CTA.** The flat beige "Klaar om kennis te
+  maken?"-style bands on Home, About, Approach and For Whom are now
+  full-bleed photos (existing gallery images) with a green gradient
+  overlay, matching the reference's "Shop Vintage Wallpaper" banner
+  pattern.
+- **Staggered photo collage** on the homepage: the uniform 4-photo strip
+  is now an asymmetric CSS-grid collage (one large image, two medium,
+  one smaller), echoing the reference's offset portfolio grid.
+- **Two-panel "why us" section** on the homepage only: a dark
+  green full-bleed section with a story/narrative column on the left
+  ("Wanneer je voelt dat er meer nodig is" / "When you feel something
+  more is needed") and a bordered quick-links box on the right
+  ("Ontdek CederStam" / "Discover CederStam", a dotted divider, then
+  Over mij/Aanpak/Voor wie/Contact as uppercase rule-divided links),
+  directly modeled on the reference's "When Your Brand No Longer
+  Reflects..." two-column section.
+- **Footer additions**: a small decorative divider (sprout icon between
+  two thin rules, reusing the developmental-support icon for brand
+  consistency), a bordered promo box repeating the main CTA ("Klaar
+  voor de eerste stap?" → book an intro, no fake newsletter discount
+  since there's no mailing list), and a "Terug naar boven" / "Back to
+  top" link next to the copyright line.
+- **New CSS component classes** in `style.css`: `.site-topbar`,
+  `.photo-banner` (+ `.photo-banner-bg`), `.collage-grid`,
+  `.split-panel` (+ `.split-panel-grid`, `.split-panel-text`,
+  `.split-panel-links`), `.btn-outline-light` (an outline button
+  variant for dark backgrounds), `.footer-divider`, `.footer-promo`.
+  All wired into the existing scroll-reveal system (`main.js`) and the
+  `.reveal-ready`/`.is-visible` CSS pattern.
+
+**Deliberately not copied**: the reference's centered-logo header with a
+hidden hamburger menu (kept our visible nav + sticky CTA, a conversion
+choice from an earlier round), its shop/cart/account icons, its
+Instagram/Pinterest feed and social button row, and its "Recently On the
+Journal" blog grid — none of these map to a practice without a shop,
+social presence, or blog, and weren't worth faking.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
