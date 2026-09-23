@@ -28,6 +28,19 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.btn:focus-visible { outline-offset: 4px; }
+.split-panel-links a:focus-visible,
+.site-topbar a:focus-visible,
+.photo-banner a:focus-visible {
+  outline-color: #ffffff;
+}
+.split-panel-links a:focus-visible { outline-offset: -3px; }
+
 body {
   margin: 0;
   background: var(--cream);
