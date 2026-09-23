@@ -323,6 +323,207 @@ section { padding: 80px 0; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ---------- Utility top bar ---------- */
+.site-topbar {
+  background: var(--sage-dark);
+  color: #ffffff;
+  text-align: center;
+}
+.site-topbar .container { padding: 9px 24px; }
+.site-topbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.site-topbar a:hover { text-decoration: underline; }
+
+/* ---------- Photo banner (full-bleed CTA) ---------- */
+.photo-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0;
+  color: #ffffff;
+}
+.photo-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.photo-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(160deg, rgba(20, 92, 50, 0.84), rgba(20, 92, 50, 0.64));
+}
+.photo-banner .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.photo-banner h2 { color: #ffffff; }
+.photo-banner p { color: rgba(255, 255, 255, 0.9); }
+.photo-banner .btn-primary { background: #ffffff; color: var(--sage-dark); box-shadow: none; }
+.photo-banner .btn-primary:hover { background: rgba(255, 255, 255, 0.88); }
+
+/* ---------- Staggered photo collage ---------- */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 140px 140px 140px;
+  grid-template-areas:
+    "a a b b"
+    "a a c c"
+    "d d c c";
+  gap: 16px;
+}
+.collage-grid img {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.collage-grid img:nth-child(1) { grid-area: a; }
+.collage-grid img:nth-child(2) { grid-area: b; }
+.collage-grid img:nth-child(3) { grid-area: c; }
+.collage-grid img:nth-child(4) { grid-area: d; }
+@media (max-width: 760px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 130px);
+    grid-template-areas:
+      "a a"
+      "b c"
+      "b c"
+      "d d";
+  }
+}
+@media (max-width: 480px) {
+  .collage-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 190px);
+    grid-template-areas: "a" "b" "c" "d";
+  }
+}
+
+/* ---------- Split panel (story + quick links) ---------- */
+.split-panel {
+  background: var(--sage-dark);
+  color: #ffffff;
+  padding: 88px 0;
+}
+.split-panel-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .split-panel { padding: 56px 0; }
+  .split-panel-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.split-panel-text .eyebrow { color: rgba(255, 255, 255, 0.75); }
+.split-panel-text h2 { color: #ffffff; }
+.split-panel-text p { color: rgba(255, 255, 255, 0.82); }
+.split-panel-links {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 44px 40px;
+  text-align: center;
+}
+.split-panel-links .sub-head {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+.split-panel-links .dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 26px;
+}
+.split-panel-links .dots span {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+.split-panel-links a {
+  display: block;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+.split-panel-links a:hover { color: #ffffff; text-decoration: underline; }
+@media (max-width: 860px) {
+  .split-panel-links { padding: 36px 24px; }
+}
+
+/* Outline button variant for dark backgrounds */
+.btn-outline-light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+}
+.btn-outline-light:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ---------- Footer decorative divider ---------- */
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 24px 0;
+  color: var(--sage-dark);
+}
+.footer-divider .line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.14);
+}
+.footer-divider svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* ---------- Footer promo box ---------- */
+.footer-promo {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 32px 28px;
+  text-align: center;
+  border-radius: var(--radius-md);
+}
+.footer-promo .sub-head {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--sage-dark);
+  margin-bottom: 10px;
+}
+.footer-promo h4 {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #000000;
+  margin: 0 0 18px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.footer-back-to-top {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+}
+.footer-back-to-top:hover { text-decoration: underline; }
+
 .card {
   background: var(--white);
   border-radius: var(--radius-md);
@@ -575,6 +776,10 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .faq-item,
 .reveal-ready .hero-grid > div,
 .reveal-ready .photo-grid > img,
+.reveal-ready .collage-grid > img,
+.reveal-ready .split-panel-text,
+.reveal-ready .split-panel-links,
+.reveal-ready .footer-promo,
 .reveal-ready .step {
   opacity: 0;
   transform: translateY(18px);
@@ -587,6 +792,10 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .faq-item.is-visible,
 .reveal-ready .hero-grid > div.is-visible,
 .reveal-ready .photo-grid > img.is-visible,
+.reveal-ready .collage-grid > img.is-visible,
+.reveal-ready .split-panel-text.is-visible,
+.reveal-ready .split-panel-links.is-visible,
+.reveal-ready .footer-promo.is-visible,
 .reveal-ready .step.is-visible {
   opacity: 1;
   transform: translateY(0);
