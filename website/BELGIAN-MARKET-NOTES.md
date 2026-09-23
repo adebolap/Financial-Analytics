@@ -410,6 +410,40 @@ Instagram/Pinterest feed and social button row, and its "Recently On the
 Journal" blog grid — none of these map to a practice without a shop,
 social presence, or blog, and weren't worth faking.
 
+## Round 9 — technical/"world class" polish pass (2026-09-23)
+
+Client asked for improvements toward a more "world class" standard.
+Since the visual design was already solid, this round focused on
+invisible technical polish rather than more visual changes. Asked
+first whether to add a "built by" credit in the footer; client said
+skip it for now.
+
+- **Open Graph / Twitter Card images.** Generated a branded 1200×630
+  share image per language (`assets/img/og-image.jpg` /
+  `og-image-en.jpg`) using the real brand fonts (Fraunces + Karla,
+  fetched directly from Google Fonts since this sandbox has no local
+  copy) composited over a gallery photo with a green gradient and the
+  white logo mark, built with Pillow. Every page now has a full
+  `og:title`/`og:description`/`og:url`/`og:image`/`og:locale`/
+  `og:site_name` block plus matching `twitter:*` tags. Previously only
+  the two homepages had any Open Graph tags at all; the other 10 pages
+  had none, so shared links to About/Approach/For Whom/Contact/Privacy
+  showed no rich preview whatsoever.
+- **Image loading/CLS.** Hero photos now carry explicit
+  `width`/`height` (matching their real intrinsic pixel dimensions) so
+  the browser can reserve the right box before the image loads; the two
+  homepage hero photos additionally get `fetchpriority="high"` since
+  they're the largest-contentful-paint element on the most-visited
+  page. The four collage-grid photos (below the fold) get
+  `loading="lazy"` plus the same width/height treatment.
+- **Branded focus-visible states.** Every interactive element
+  (links, buttons, form fields, footer/topbar links) now gets a
+  green `:focus-visible` ring instead of the browser's default blue
+  outline, with a white variant automatically applied inside the dark
+  green sections (topbar, split-panel links, photo banners) so it
+  stays visible against that background. Verified by tabbing through
+  the homepage.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
@@ -426,3 +460,5 @@ social presence, or blog, and weren't worth faking.
   still the one open item from the original brief's "Able to add
   Video" requirement) and 1–2 parent testimonials once available —
   both flagged as the next-biggest conversion levers, not yet built.
+- Whether to add a "Website by ___" footer credit later (declined for
+  this round, but the client may want one down the line).
