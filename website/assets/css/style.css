@@ -3,10 +3,10 @@
    thoroughfaredesign.com color reference. Lots of white space. */
 
 :root {
-  --cream: #e6e3d4;
-  --cream-alt: #efece0;
-  --beige: #d9d2bc;
-  --sage: #6b6447;
+  --cream: #e8e0cf;
+  --cream-alt: #f0e9da;
+  --beige: #dcd0b6;
+  --sage: #6d6249;
   --sage-light: #a79b7f;
   --sage-dark: #3a3024;
   --accent: #3a3024;
@@ -110,7 +110,7 @@ p { margin: 0 0 1.2em; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(230, 227, 212, 0.92);
+  background: rgba(232, 224, 207, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -151,7 +151,7 @@ p { margin: 0 0 1.2em; }
   margin: 0;
   padding: 0;
 }
-.main-nav a {
+.main-nav a:not(.btn) {
   text-decoration: none;
   font-weight: 700;
   font-size: 0.95rem;
@@ -655,7 +655,7 @@ textarea { resize: vertical; min-height: 130px; }
   padding: 64px 0 28px;
   border-top: 1px solid rgba(58, 48, 36, 0.12);
 }
-.site-footer a { color: var(--ink); text-decoration: none; }
+.site-footer a:not(.btn) { color: var(--ink); text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
 .footer-grid {
   display: grid;
