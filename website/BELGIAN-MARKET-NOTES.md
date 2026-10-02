@@ -528,6 +528,59 @@ section) plus a screenshot of our own site.
   consistency, though they weren't visually affected (they don't use
   `--cream`).
 
+## Round 12 — mosaic photo stagger on the homepage collage (2026-10-02)
+
+Client noted thoroughfaredesign.com has a "mosaic feel" when you look
+closely: its "Recent Design Work" and testimonial sections scatter
+photos at different sizes and heights around the text, rather than
+containing them in a neat aligned grid.
+
+Re-examined the extracted reference video frames for that section
+specifically and rebuilt `.collage-grid` (the 4-photo strip under the
+homepage quote) to alternate a vertical offset: the top-left and
+bottom-right photos sit flush with their grid row, while the top-right
+and bottom-left photos float down ~32px, leaving a visible gap of the
+section's background above them. That alternating pinwheel stagger
+reads as an intentional mosaic rhythm rather than a strict grid, while
+staying calmer than the reference's own treatment (no rotation, no
+photos bleeding across section boundaries) to match CederStam's more
+grounded, therapeutic tone. Simplified back to a plain grid (no
+offset) at the 480px mobile breakpoint, where there isn't room for the
+stagger to read cleanly.
+
+## Round 13 — paper-grain texture and divider rule (2026-10-02)
+
+Client sent another reference screenshot (Thoroughfare's "Behind The
+Brand" two-column photo+text section) with a red dot marked on the
+background, no further comment. Sampled that screenshot's background
+pixels directly and confirmed a consistent subtle paper-grain/noise
+texture across every surface in every reference screenshot reviewed so
+far, which the site didn't have at all (flat solid colors only).
+
+- **Grain texture, sitewide.** Added a `--grain` CSS variable holding
+  an inline SVG `feTurbulence` noise pattern (no external image file,
+  generated in CSS), applied via `background-blend-mode` to every
+  major surface: body, `.section-alt`, `.section-beige`, `.hero-bg`,
+  the mobile nav dropdown, `.site-footer`, `.site-topbar`, and
+  `.split-panel`. Light surfaces use `multiply` (darkens slightly,
+  matching the reference's cream texture); the two dark-brown surfaces
+  (`.site-topbar`, `.split-panel`) use `soft-light` instead, since
+  `multiply` on an already-dark background would crush it toward
+  black. Had to fix `.hero-bg` specifically: it paints its own opaque
+  gradient background on top of body, which was hiding body's grain
+  entirely on every hero section until grain was added as an explicit
+  extra layer there too.
+- **Vertical divider rule** added to the About page's two-column
+  "Mijn verhaal" / "Ervaring & opleiding" section (NL + EN), matching
+  the thin rule between photo and text in "Behind The Brand." Added as
+  a new `.grid-2.divided` modifier (border-right on the first column,
+  collapsing to a horizontal border-bottom on mobile stack) rather
+  than changing the shared `.grid-2` class directly, since that class
+  is also used for plain card grids elsewhere that shouldn't get a
+  rule through the middle.
+- Re-ran the button text/background collision scan and a full JS-error
+  sweep across all 13 pages after these changes: no regressions.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
