@@ -444,6 +444,44 @@ skip it for now.
   stays visible against that background. Verified by tabbing through
   the homepage.
 
+## Round 10 — full palette swap to Thoroughfare's actual colors (2026-10-02)
+
+Client clarified that "maintaining same colors" in the original
+reference request meant keeping CederStam's own palette while matching
+the reference's *structure* (Round 8). This round, the client asked
+explicitly for the *same colors* as thoroughfaredesign.com too, not
+just the layout. Confirmed scope first (full palette switch; yes,
+recolor the logo to match rather than leave it green).
+
+- **New palette, sampled directly from pixels in the reference video**
+  (not guessed): cream `#e6e3d4` (main background, was white), dark
+  olive `#6b6447` (was the green `--sage`, used for headings/icons/nav),
+  dark brown/ink `#3a3024` (was dark green `--sage-dark`, used for the
+  darkest accent, body text, topbar/split-panel backgrounds), taupe
+  `#a79b7f` (was light green `--sage-light`). All CSS custom properties
+  in `style.css` were repointed to these values (same variable names,
+  new hex values, documented at the top of the file), plus every
+  hardcoded rgba() that referenced the old green directly (hero
+  gradients, photo-banner overlay, footer colors) was updated to the
+  matching brown-tinted equivalent.
+- **Footer** moved from pure white/black (an explicit choice from an
+  earlier round) to cream/dark-brown ink, since that's what the
+  reference's own footer actually uses and pure black no longer fit
+  the warm palette.
+- **Logo recolored.** `logo-icon.png`, `logo-cederstam.png`,
+  `favicon.png`, and `apple-touch-icon.png` were all green; recolored
+  to the new dark brown/olive tone with a luminosity-preserving remap
+  (each pixel's brightness relative to the image's own range is
+  mapped between the dark-ink and olive colors, so the original
+  shading/depth is kept, just in the new hue) rather than a flat
+  color swap, done with Pillow since there's no design tool available
+  here.
+- **OG/Twitter share images regenerated** with the new dark-brown
+  gradient overlay and the recolored white-on-brown logo mark.
+- Verified across all 13 pages (NL + EN) via local screenshots: no
+  console errors, text contrast reads cleanly against the new cream
+  background everywhere checked.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
