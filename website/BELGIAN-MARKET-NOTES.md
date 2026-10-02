@@ -482,6 +482,52 @@ recolor the logo to match rather than leave it green).
   console errors, text contrast reads cleanly against the new cream
   background everywhere checked.
 
+## Round 11 — fixed invisible button text, refined palette (2026-10-02)
+
+Client reported "some buttons text not showing up" and "the palette is
+not same," with fresh screenshots of thoroughfaredesign.com (a
+different page than before: its homepage hero and a "Behind The Brand"
+section) plus a screenshot of our own site.
+
+- **Real bug found and fixed.** `.header-cta` (the sticky "Plan een
+  kennismaking" button) and the footer promo CTA button were rendering
+  with identical text and background colors; white text was supposed
+  to show but didn't, because `.main-nav a` and `.site-footer a` (both
+  more specific than `.btn-primary`'s single-class color rule, since
+  they add an element-type selector) were overriding the button's
+  intended white text color with the page's dark ink color. This bug's
+  effect was invisible before the Round 10 palette swap, because the
+  old accent and ink colors were different enough (green vs dark
+  green) to still show readable low-contrast text; once Round 10 made
+  the primary-button accent color and the body ink color the *same*
+  dark brown, the text became fully invisible. Fixed by scoping those
+  nav/footer link rules with `:not(.btn)`, and then scanned every
+  button on every page via a script comparing computed text vs.
+  background color to confirm no other instance of this exists
+  anywhere on the site.
+- **Also likely at play**: the client's own screenshot showed garbled
+  content that doesn't match what's actually in our HTML (brand name
+  read as "Cedar Tribe," "Dutch · English" read as "English ·
+  English," button copy paraphrased, stray "AND" text in the nav).
+  This matches a browser translate/rewrite extension altering the live
+  page, the same thing that happened earlier in this project with a
+  screenshot that showed "CedarVoice" and "Contact AND FR" — confirmed
+  with the client back then as an extension issue, not a real site
+  bug. Verified this round by reading the actual DOM text content
+  directly (not a screenshot) on the real site: it correctly says
+  "Book an introduction," "Dutch · English," "CederStam," etc.
+- **Palette refined** using the two new reference screenshots: sampled
+  colors landed very close to Round 10's values already (confirms
+  those pixel samples from the video were accurate), so this was a
+  small warm-up rather than a rework: `--cream` moved from `#e6e3d4`
+  to `#e8e0cf`, `--cream-alt` to `#f0e9da`, `--beige` to `#dcd0b6`,
+  and `--sage` nudged from `#6b6447` to `#6d6249` to match the
+  reference's heading color almost exactly (`#6f664b` sampled). Dark
+  ink/accent stayed at `#3a3024` since the sample (`#403224`) was
+  already a near-exact match. OG share images regenerated again for
+  consistency, though they weren't visually affected (they don't use
+  `--cream`).
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
