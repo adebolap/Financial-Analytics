@@ -528,6 +528,26 @@ section) plus a screenshot of our own site.
   consistency, though they weren't visually affected (they don't use
   `--cream`).
 
+## Round 12 — mosaic photo stagger on the homepage collage (2026-10-02)
+
+Client noted thoroughfaredesign.com has a "mosaic feel" when you look
+closely: its "Recent Design Work" and testimonial sections scatter
+photos at different sizes and heights around the text, rather than
+containing them in a neat aligned grid.
+
+Re-examined the extracted reference video frames for that section
+specifically and rebuilt `.collage-grid` (the 4-photo strip under the
+homepage quote) to alternate a vertical offset: the top-left and
+bottom-right photos sit flush with their grid row, while the top-right
+and bottom-left photos float down ~32px, leaving a visible gap of the
+section's background above them. That alternating pinwheel stagger
+reads as an intentional mosaic rhythm rather than a strict grid, while
+staying calmer than the reference's own treatment (no rotation, no
+photos bleeding across section boundaries) to match CederStam's more
+grounded, therapeutic tone. Simplified back to a plain grid (no
+offset) at the 480px mobile breakpoint, where there isn't room for the
+stagger to read cleanly.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
