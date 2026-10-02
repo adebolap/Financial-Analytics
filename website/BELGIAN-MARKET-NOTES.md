@@ -548,6 +548,39 @@ grounded, therapeutic tone. Simplified back to a plain grid (no
 offset) at the 480px mobile breakpoint, where there isn't room for the
 stagger to read cleanly.
 
+## Round 13 — paper-grain texture and divider rule (2026-10-02)
+
+Client sent another reference screenshot (Thoroughfare's "Behind The
+Brand" two-column photo+text section) with a red dot marked on the
+background, no further comment. Sampled that screenshot's background
+pixels directly and confirmed a consistent subtle paper-grain/noise
+texture across every surface in every reference screenshot reviewed so
+far, which the site didn't have at all (flat solid colors only).
+
+- **Grain texture, sitewide.** Added a `--grain` CSS variable holding
+  an inline SVG `feTurbulence` noise pattern (no external image file,
+  generated in CSS), applied via `background-blend-mode` to every
+  major surface: body, `.section-alt`, `.section-beige`, `.hero-bg`,
+  the mobile nav dropdown, `.site-footer`, `.site-topbar`, and
+  `.split-panel`. Light surfaces use `multiply` (darkens slightly,
+  matching the reference's cream texture); the two dark-brown surfaces
+  (`.site-topbar`, `.split-panel`) use `soft-light` instead, since
+  `multiply` on an already-dark background would crush it toward
+  black. Had to fix `.hero-bg` specifically: it paints its own opaque
+  gradient background on top of body, which was hiding body's grain
+  entirely on every hero section until grain was added as an explicit
+  extra layer there too.
+- **Vertical divider rule** added to the About page's two-column
+  "Mijn verhaal" / "Ervaring & opleiding" section (NL + EN), matching
+  the thin rule between photo and text in "Behind The Brand." Added as
+  a new `.grid-2.divided` modifier (border-right on the first column,
+  collapsing to a horizontal border-bottom on mobile stack) rather
+  than changing the shared `.grid-2` class directly, since that class
+  is also used for plain card grids elsewhere that shouldn't get a
+  rule through the middle.
+- Re-ran the button text/background collision scan and a full JS-error
+  sweep across all 13 pages after these changes: no regressions.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
