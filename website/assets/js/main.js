@@ -20,7 +20,7 @@ function initScrollReveal() {
   if (reduceMotion || !("IntersectionObserver" in window)) return;
 
   var targets = document.querySelectorAll(
-    ".card, .section-head, .quote-block, .mini-timeline-item, .faq-item, .hero-grid > div, .photo-grid > img, .collage-grid > img, .split-panel-text, .split-panel-links, .footer-promo, .step, .photo-banner-bg"
+    ".card, .section-head, .quote-block, .mini-timeline-item, .faq-item, .hero-grid > div, .hero-text, .photo-grid > img, .collage-grid > img, .split-panel-text, .split-panel-links, .footer-promo, .step, .photo-banner-bg, .hero-photo-bg"
   );
   if (!targets.length) return;
 
