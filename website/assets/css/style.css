@@ -3,9 +3,9 @@
    thoroughfaredesign.com color reference. Lots of white space. */
 
 :root {
-  --cream: #e8e0cf;
-  --cream-alt: #f0e9da;
-  --beige: #dcd0b6;
+  --cream: #ebe5d6;
+  --cream-alt: #f2ece0;
+  --beige: #e1d7c1;
   --sage: #6d6249;
   --sage-light: #a79b7f;
   --sage-dark: #3a3024;
@@ -327,7 +327,7 @@ p { margin: 0 0 1.2em; }
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
   pointer-events: none;
 }
-.hero-visual img { transition: transform 0.6s ease; }
+.hero-visual img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
 .hero-visual:hover img { transform: scale(1.035); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
@@ -419,7 +419,9 @@ section { padding: 80px 0; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(160deg, rgba(58, 48, 36, 0.84), rgba(58, 48, 36, 0.64));
+  background:
+    linear-gradient(to bottom, var(--cream) 0, rgba(235, 229, 214, 0) 90px, rgba(235, 229, 214, 0) calc(100% - 90px), var(--cream) 100%),
+    linear-gradient(160deg, rgba(58, 48, 36, 0.84), rgba(58, 48, 36, 0.64));
 }
 .photo-banner .eyebrow { color: rgba(255, 255, 255, 0.85); }
 .photo-banner h2 { color: #ffffff; }
@@ -856,11 +858,11 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .step {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-ready .photo-banner-bg {
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-ready .card.is-visible,
 .reveal-ready .section-head.is-visible,
