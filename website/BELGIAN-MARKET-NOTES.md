@@ -581,6 +581,61 @@ far, which the site didn't have at all (flat solid colors only).
 - Re-ran the button text/background collision scan and a full JS-error
   sweep across all 13 pages after these changes: no regressions.
 
+## Round 14 — green accents, photo fade/mute, new photos, blog (2026-10-07)
+
+Client sent 3 new photos and a PDF (a Dutch blog article on the TEACCH
+method), with feedback: wanted a touch of green back without losing
+the brown/olive base, wanted the blog content added (explicitly: "do
+not use the links included" from the PDF), and asked whether photos
+sitewide could "fade." Asked a clarifying question on both points
+before starting: green stayed as a small accent on top of the
+brown/olive base (not a full revert), and "fade" meant both a muted
+color treatment and a fade-in-on-scroll animation.
+
+- **Green accents reintroduced.** Added `--green`/`--green-dark`
+  CSS variables (the original brand green) and applied them narrowly:
+  card icons, step numbers, the FAQ accordion's `+` toggle, and the
+  mini-timeline numerals. Base palette (cream/beige/sage/brown) left
+  untouched. Logo and favicon files recolored back to green via the
+  same luminosity-preserving remap used earlier in the project.
+- **Muted photo filter, sitewide.** Added a shared `filter:
+  saturate(0.82) sepia(0.12) brightness(0.98) contrast(0.97)` to every
+  real photograph (`.hero-visual img`, `.photo-grid img`,
+  `.collage-grid img`, `.photo-banner-bg`) so photography reads as
+  warm and editorial rather than bright stock imagery.
+- **Fade-in-on-scroll gap closed.** `.photo-banner-bg` (the full-bleed
+  CTA band photos on Home/About/Approach/For Whom) had no scroll
+  reveal at all — found and fixed: added its own opacity-only
+  hidden/visible pair (no `translateY`, since the element is
+  `position: absolute; inset: 0` and translating it would expose gaps
+  at the cover edges) and added it to `main.js`'s `initScrollReveal()`
+  target list. Every photo type now fades in on scroll.
+- **3 new client photos integrated**, replacing the 3 most-repeated
+  stock-feeling Duplo-block photos (all in landscape-only slots, no
+  crop risk from `object-fit: cover`): `kind-duplo-1.jpg` →
+  `speelgoed-montage.jpg` (wooden toy train assembled with a toy
+  hammer/wrench), `kind-duplo-4.jpg` → `gereedschapskist.jpg`
+  (overhead shot of a child playing with a wooden tool box), and
+  `kind-duplo-5.jpg` → `knutselen.jpg` (craft table with scissors and
+  paper). `kind-duplo-2.jpg`/`-3.jpg` kept as-is (portrait-only hero
+  slots). Alt text rewritten to match the new photos' actual content
+  in both languages.
+- **Blog added.** New `/blog.html` + `/en/blog.html` index pages and a
+  first article, `/blog/teacch-methode.html` +
+  `/en/blog/teacch-method.html`, rewriting the PDF's TEACCH-method
+  research summary in CederStam's voice (fixed the source PDF's
+  "Ceder Stem Praktijk"/"CederStem" branding to CederStam throughout).
+  Kept the one legitimate academic citation (Sanz-Cervera et al.,
+  2018, Papeles del Psicólogo); excluded every stray resource/product
+  link from the PDF per the client's explicit instruction. "Blog" added
+  to the main nav and footer nav on all 12 existing content pages, plus
+  a "Recent from the blog"-style teaser section on the homepage (NL +
+  EN) linking to the new article. Sitemap updated with the 4 new URLs.
+- Re-ran the button text/background collision scan, a full JS-error
+  sweep, and a broken-internal-link check across all 16 pages (13
+  existing + blog index + article, NL and EN) after this batch: no
+  regressions.
+
 ## Still open
 
 - Diploma year and total years of experience for the About page (copy
@@ -599,3 +654,7 @@ far, which the site didn't have at all (flat solid colors only).
   both flagged as the next-biggest conversion levers, not yet built.
 - Whether to add a "Website by ___" footer credit later (declined for
   this round, but the client may want one down the line).
+- Whether the TEACCH blog article should get a short English-only
+  disclaimer noting it's translated/adapted from the source PDF, and
+  whether more blog articles are planned (the index page is built to
+  scale past one post, but only has the one card for now).
