@@ -76,8 +76,7 @@ img { max-width: 100%; display: block; }
    soft and editorial rather than bright stock images. */
 .hero-visual img,
 .photo-grid img,
-.collage-grid img,
-.photo-banner-bg {
+.collage-grid img {
   filter: saturate(0.82) sepia(0.12) brightness(0.98) contrast(0.97);
 }
 
@@ -405,14 +404,19 @@ section { padding: 80px 0; }
   position: relative;
   overflow: hidden;
   padding: 110px 0;
-  color: #ffffff;
+  color: var(--ink);
 }
+/* The banner photo reads as a faint watermark behind the text: heavily
+   muted/blurred, then washed with a translucent cream layer (below) so
+   only a soft, ambient trace of the photo remains, blending seamlessly
+   into the surrounding page at the edges (opaque cream there). */
 .photo-banner-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   z-index: -2;
+  filter: saturate(0.5) sepia(0.12) brightness(1.1) contrast(0.9) blur(2px);
 }
 .photo-banner::after {
   content: "";
@@ -420,14 +424,10 @@ section { padding: 80px 0; }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(to bottom, var(--cream) 0, rgba(235, 229, 214, 0) 90px, rgba(235, 229, 214, 0) calc(100% - 90px), var(--cream) 100%),
-    linear-gradient(160deg, rgba(58, 48, 36, 0.84), rgba(58, 48, 36, 0.64));
+    linear-gradient(to bottom, var(--cream) 0, rgba(235, 229, 214, 0) 110px, rgba(235, 229, 214, 0) calc(100% - 110px), var(--cream) 100%),
+    linear-gradient(rgba(235, 229, 214, 0.82), rgba(235, 229, 214, 0.82));
 }
-.photo-banner .eyebrow { color: rgba(255, 255, 255, 0.85); }
-.photo-banner h2 { color: #ffffff; }
-.photo-banner p { color: rgba(255, 255, 255, 0.9); }
-.photo-banner .btn-primary { background: #ffffff; color: var(--sage-dark); box-shadow: none; }
-.photo-banner .btn-primary:hover { background: rgba(255, 255, 255, 0.88); }
+.photo-banner p { color: var(--ink-soft); }
 
 /* ---------- Staggered photo collage ---------- */
 .collage-grid {
