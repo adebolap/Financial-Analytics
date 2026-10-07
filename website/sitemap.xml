@@ -27,6 +27,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/contact.html" />
   </url>
   <url>
+    <loc>https://www.cederstem.be/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/blog.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/blog.html" />
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/blog/teacch-methode.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://www.cederstem.be/blog/teacch-methode.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cederstem.be/en/blog/teacch-method.html" />
+  </url>
+  <url>
     <loc>https://www.cederstem.be/en/</loc>
   </url>
   <url>
@@ -40,5 +50,11 @@
   </url>
   <url>
     <loc>https://www.cederstem.be/en/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/blog.html</loc>
+  </url>
+  <url>
+    <loc>https://www.cederstem.be/en/blog/teacch-method.html</loc>
   </url>
 </urlset>
