@@ -330,6 +330,30 @@ p { margin: 0 0 1.2em; }
 .hero-visual:hover img { transform: scale(1.035); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
+/* Hero variant with the photo as a subtle full-bleed background
+   watermark instead of a separate boxed image, matching the
+   photo-banner treatment: heavily muted/blurred and washed with a
+   translucent cream layer so only a faint, ambient trace remains. */
+.hero-with-photo { padding: 130px 0 140px; }
+.hero-text { max-width: 640px; }
+.hero-photo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5) sepia(0.12) brightness(1.1) contrast(0.9) blur(2px);
+}
+.hero-with-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to bottom, var(--cream) 0, rgba(235, 229, 214, 0) 110px, rgba(235, 229, 214, 0) calc(100% - 110px), var(--cream) 100%),
+    linear-gradient(rgba(235, 229, 214, 0.82), rgba(235, 229, 214, 0.82));
+}
+
 /* ---------- Sections ---------- */
 section { padding: 80px 0; }
 .section-alt { background-color: var(--cream-alt); background-image: var(--grain); background-blend-mode: multiply; }
@@ -850,6 +874,7 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .mini-timeline-item,
 .reveal-ready .faq-item,
 .reveal-ready .hero-grid > div,
+.reveal-ready .hero-text,
 .reveal-ready .photo-grid > img,
 .reveal-ready .collage-grid > img,
 .reveal-ready .split-panel-text,
@@ -860,7 +885,8 @@ textarea { resize: vertical; min-height: 130px; }
   transform: translateY(18px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal-ready .photo-banner-bg {
+.reveal-ready .photo-banner-bg,
+.reveal-ready .hero-photo-bg {
   opacity: 0;
   transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -870,6 +896,7 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .mini-timeline-item.is-visible,
 .reveal-ready .faq-item.is-visible,
 .reveal-ready .hero-grid > div.is-visible,
+.reveal-ready .hero-text.is-visible,
 .reveal-ready .photo-grid > img.is-visible,
 .reveal-ready .collage-grid > img.is-visible,
 .reveal-ready .split-panel-text.is-visible,
@@ -879,7 +906,8 @@ textarea { resize: vertical; min-height: 130px; }
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-ready .photo-banner-bg.is-visible {
+.reveal-ready .photo-banner-bg.is-visible,
+.reveal-ready .hero-photo-bg.is-visible {
   opacity: 1;
 }
 
