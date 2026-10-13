@@ -499,22 +499,15 @@ section { padding: 88px 0; }
 }
 .photo-banner p { color: var(--ink-soft); }
 
-/* ---------- Staggered photo collage ---------- */
-/* Photos fade out at their own edges (mask-image vignette) and sit
-   gap-free against each other, so neighboring photos blend softly
-   into the shared background instead of reading as hard-edged tiles
-   in a grid. */
+/* ---------- Free-form photo collage ---------- */
+/* Photos fade out at their own edges (mask-image vignette) and are
+   scattered at varied sizes, overlaps and small tilt angles rather
+   than lined up in a grid, for a looser, hand-arranged feel. Where
+   they overlap, the faded edges blend into each other and into the
+   shared background instead of meeting at a tile boundary. */
 .collage-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100px 100px 100px 100px;
-  grid-template-areas:
-    "a a b b"
-    "a a b b"
-    "d d c c"
-    "d d c c";
-  gap: 0;
-  align-items: start;
+  position: relative;
+  height: 580px;
 }
 .collage-grid img,
 .blend-photo {
@@ -522,38 +515,55 @@ section { padding: 88px 0; }
   -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, #000 65%, transparent 100%);
 }
 .collage-grid img {
+  position: absolute;
   object-fit: cover;
-  width: 100%;
   display: block;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.collage-grid img:nth-child(1) { grid-area: a; height: 100%; }
-.collage-grid img:nth-child(2) { grid-area: b; height: calc(100% - 32px); margin-top: 32px; }
-.collage-grid img:nth-child(3) { grid-area: c; height: calc(100% - 32px); }
-.collage-grid img:nth-child(4) { grid-area: d; height: calc(100% - 32px); margin-top: 32px; }
+.collage-grid img:hover {
+  transform: rotate(var(--tilt, 0deg)) scale(1.05);
+  z-index: 5;
+}
+.collage-grid img:nth-child(1) {
+  --tilt: -3deg;
+  top: 0; left: 0;
+  width: 48%; height: 58%;
+  z-index: 2;
+}
+.collage-grid img:nth-child(2) {
+  --tilt: 2.5deg;
+  top: 4%; left: 44%;
+  width: 52%; height: 46%;
+  z-index: 3;
+}
+.collage-grid img:nth-child(3) {
+  --tilt: 2deg;
+  top: 56%; left: 4%;
+  width: 38%; height: 42%;
+  z-index: 1;
+}
+.collage-grid img:nth-child(4) {
+  --tilt: -2.5deg;
+  top: 46%; left: 38%;
+  width: 58%; height: 52%;
+  z-index: 4;
+}
 @media (max-width: 760px) {
-  .collage-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 110px 110px 110px 110px;
-    grid-template-areas:
-      "a b"
-      "a b"
-      "d c"
-      "d c";
-    gap: 0;
-  }
-  .collage-grid img:nth-child(2) { height: calc(100% - 22px); margin-top: 22px; }
-  .collage-grid img:nth-child(4) { height: calc(100% - 22px); margin-top: 22px; }
+  .collage-grid { height: 460px; }
+  .collage-grid img:nth-child(1) { width: 56%; height: 52%; }
+  .collage-grid img:nth-child(2) { width: 58%; height: 42%; left: 40%; }
+  .collage-grid img:nth-child(3) { width: 48%; height: 40%; top: 58%; }
+  .collage-grid img:nth-child(4) { width: 60%; height: 46%; top: 50%; left: 36%; }
 }
 @media (max-width: 480px) {
-  .collage-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 190px);
-    grid-template-areas: "a" "b" "c" "d";
-    align-items: stretch;
+  .collage-grid { height: auto; position: static; display: flex; flex-direction: column; gap: 28px; }
+  .collage-grid img {
+    position: static;
+    width: 100%;
+    height: 220px;
+    transform: rotate(var(--tilt, 0deg));
   }
-  .collage-grid img:nth-child(2),
-  .collage-grid img:nth-child(3),
-  .collage-grid img:nth-child(4) { height: 100%; margin-top: 0; }
 }
 
 /* ---------- Split panel (story + quick links) ---------- */
@@ -956,7 +966,6 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .hero-grid > div,
 .reveal-ready .hero-text,
 .reveal-ready .photo-grid > img,
-.reveal-ready .collage-grid > img,
 .reveal-ready .split-panel-text,
 .reveal-ready .split-panel-links,
 .reveal-ready .footer-promo,
@@ -964,6 +973,21 @@ textarea { resize: vertical; min-height: 130px; }
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Collage photos keep their resting tilt through the reveal, instead
+   of the shared translateY-only transform stomping it out. */
+.reveal-ready .collage-grid > img {
+  opacity: 0;
+  transform: translateY(18px) rotate(var(--tilt, 0deg));
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-ready .collage-grid > img.is-visible {
+  opacity: 1;
+  transform: rotate(var(--tilt, 0deg));
+}
+.reveal-ready .collage-grid > img.is-visible:hover {
+  transform: rotate(var(--tilt, 0deg)) scale(1.05);
+  z-index: 5;
 }
 .reveal-ready .photo-banner-bg,
 .reveal-ready .hero-photo-bg {
@@ -978,7 +1002,6 @@ textarea { resize: vertical; min-height: 130px; }
 .reveal-ready .hero-grid > div.is-visible,
 .reveal-ready .hero-text.is-visible,
 .reveal-ready .photo-grid > img.is-visible,
-.reveal-ready .collage-grid > img.is-visible,
 .reveal-ready .split-panel-text.is-visible,
 .reveal-ready .split-panel-links.is-visible,
 .reveal-ready .footer-promo.is-visible,
