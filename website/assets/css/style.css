@@ -86,13 +86,14 @@ h1, h2, h3, h4 {
   font-family: var(--font-head);
   font-weight: 600;
   line-height: 1.15;
-  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.58em;
   color: var(--sage-dark);
 }
 
 h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 500; }
 h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
-h3 { font-size: 1.3rem; }
+h3 { font-size: 1.3rem; letter-spacing: -0.005em; }
 
 p { margin: 0 0 1.2em; }
 
@@ -100,11 +101,11 @@ p { margin: 0 0 1.2em; }
   display: inline-block;
   font-family: var(--font-body);
   font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--sage-dark);
   font-weight: 700;
-  margin-bottom: 0.9em;
+  margin-bottom: 0.95em;
 }
 
 .lede {
@@ -263,15 +264,16 @@ p { margin: 0 0 1.2em; }
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, background-color 0.2s ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-2px) scale(1.015); }
+.btn:active { transform: translateY(0) scale(0.97); transition-duration: 0.12s; }
 .btn-primary {
   background: var(--accent);
   color: var(--white);
   box-shadow: var(--shadow);
 }
-.btn-primary:hover { background: var(--accent-dark); }
+.btn-primary:hover { background: var(--accent-dark); box-shadow: 0 20px 38px -16px rgba(58, 48, 36, 0.45); }
 .btn-outline {
   background: transparent;
   border-color: var(--sage-dark);
@@ -366,11 +368,44 @@ p { margin: 0 0 1.2em; }
 }
 
 /* ---------- Sections ---------- */
-section { padding: 80px 0; }
+section { padding: 88px 0; }
 .section-alt { background-color: var(--cream-alt); background-image: var(--grain); background-blend-mode: multiply; }
 .section-beige { background-color: var(--beige); background-image: var(--grain); background-blend-mode: multiply; }
 
-.section-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+/* Soften the hand-off between color bands: fade each tinted section
+   in and out of the page's base cream at its top/bottom edge instead
+   of a flat color cut, echoing the same blend language used on the
+   photos. */
+.section-alt, .section-beige { position: relative; }
+.section-alt::before, .section-beige::before,
+.section-alt::after, .section-beige::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 70px;
+  pointer-events: none;
+}
+.section-alt::before, .section-beige::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--cream), transparent);
+}
+.section-alt::after, .section-beige::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--cream), transparent);
+}
+/* Where two tinted sections sit directly back to back (no plain
+   section between them), skip the fade at their shared boundary so
+   a stray cream seam doesn't appear where the two bands should read
+   as one continuous block. */
+:is(.section-alt, .section-beige) + :is(.section-alt, .section-beige)::before {
+  display: none;
+}
+:is(.section-alt, .section-beige):has(+ :is(.section-alt, .section-beige))::after {
+  display: none;
+}
+
+.section-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
 .section-head.left { margin-left: 0; text-align: left; }
 
 .grid-3 {
@@ -609,10 +644,13 @@ section { padding: 80px 0; }
 
 /* ---------- Footer promo box ---------- */
 .footer-promo {
-  border: 1px solid rgba(58, 48, 36, 0.18);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   padding: 32px 28px;
   text-align: center;
   border-radius: var(--radius-md);
+  box-shadow: 0 2px 18px -10px rgba(58, 48, 36, 0.14);
 }
 .footer-promo .sub-head {
   font-family: var(--font-head);
@@ -641,10 +679,17 @@ section { padding: 80px 0; }
 .footer-back-to-top:hover { text-decoration: underline; }
 
 .card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-radius: var(--radius-md);
   padding: 32px 28px;
-  border: 1px solid var(--line);
+  box-shadow: 0 2px 18px -10px rgba(58, 48, 36, 0.16);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px -22px rgba(58, 48, 36, 0.32);
 }
 .card .icon {
   width: 44px; height: 44px;
@@ -796,8 +841,10 @@ textarea { resize: vertical; min-height: 130px; }
   left: 20px; right: 20px; bottom: 20px;
   max-width: 640px;
   margin: 0 auto;
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   padding: 22px 24px;
@@ -818,10 +865,17 @@ textarea { resize: vertical; min-height: 130px; }
   gap: 12px;
 }
 .faq-item {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-radius: var(--radius-md);
   padding: 6px 24px;
+  box-shadow: 0 2px 16px -10px rgba(58, 48, 36, 0.14);
+  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -18px rgba(58, 48, 36, 0.3);
 }
 .faq-item summary {
   cursor: pointer;
@@ -860,13 +914,20 @@ textarea { resize: vertical; min-height: 130px; }
   margin-bottom: 36px;
 }
 .mini-timeline-item {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-radius: var(--radius-md);
   padding: 18px 20px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  box-shadow: 0 2px 16px -10px rgba(58, 48, 36, 0.14);
+  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mini-timeline-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -18px rgba(58, 48, 36, 0.28);
 }
 .mini-timeline-item .num {
   font-family: var(--font-head);
