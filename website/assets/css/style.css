@@ -330,6 +330,17 @@ p { margin: 0 0 1.2em; }
 .hero-visual:hover img { transform: scale(1.035); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
+/* Strip the boxed chrome (gradient fill, shadow, inset border) when the
+   photo inside is a blended/faded one, so nothing shows through behind
+   its soft edges and no hard rectangle remains around it. */
+.hero-visual.visual-blend {
+  background: none;
+  box-shadow: none;
+}
+.hero-visual.visual-blend::after {
+  content: none;
+}
+
 /* Hero variant with the photo as a subtle full-bleed background
    watermark instead of a separate boxed image, matching the
    photo-banner treatment: heavily muted/blurred and washed with a
@@ -470,12 +481,15 @@ section { padding: 80px 0; }
   gap: 0;
   align-items: start;
 }
+.collage-grid img,
+.blend-photo {
+  mask-image: radial-gradient(ellipse closest-side at 50% 50%, #000 65%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, #000 65%, transparent 100%);
+}
 .collage-grid img {
   object-fit: cover;
   width: 100%;
   display: block;
-  mask-image: radial-gradient(ellipse closest-side at 50% 50%, #000 28%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, #000 28%, transparent 100%);
 }
 .collage-grid img:nth-child(1) { grid-area: a; height: 100%; }
 .collage-grid img:nth-child(2) { grid-area: b; height: calc(100% - 32px); margin-top: 32px; }
